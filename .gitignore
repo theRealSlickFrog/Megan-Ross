@@ -1,0 +1,24 @@
+# Large design files
+*.psd
+*.ai
+*.eps
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Claude files (optional - remove if you want to track them)
+.claude/
