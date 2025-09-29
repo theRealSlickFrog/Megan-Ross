@@ -3,13 +3,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>About - Puppy Website Template</title>
+	<title>Estate Planning - Ross Estate Law</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 	<div id="header">
 		<div>
-			<a href="index.html" class="logo">PugSureWoi</a>
+			<a href="index.html" class="logo">Ross Estate Law</a>
 		</div>
 	</div>
 	<div id="navigation">
@@ -18,14 +19,14 @@
 				<li>
 					<a class="home" href="index.html">Home</a>
 				</li>
-				<li class="current dropdown">
+				<li class="dropdown">
 					<a class="about" href="about.html">About</a>
 					<div class="dropdown-content">
 						<a href="about.html">Dr. Megan Ross</a>
 						<a href="our-process.html">Our Process</a>
 					</div>
 				</li>
-				<li class="dropdown">
+				<li class="current dropdown">
 					<a class="services" href="estate-planning.html">Services</a>
 					<div class="dropdown-content services-dropdown">
 						<a href="estate-planning.html">Estate Planning</a>
@@ -44,42 +45,35 @@
 		<div id="background">
 			<div>
 				<div class="about">
-					<h3>About Dr. Megan Ross</h3>
-					<h4>Personal Profile</h4>
+					<h3>Estate Planning<br>in Halifax, Nova Scotia</h3>
 					<p>
-						Megan was called to the bar in Alberta in 2010, with the Honourable Justice Papperny of the Alberta Court of Appeal presiding over the ceremony. Justice Papperny's inspiring words have resonated with Megan throughout her career. She emphasized the challenges women face in the legal industry, urging that the profession would not improve until women began to remain in it and work toward changing it. This message was pivotal in inspiring the founding of Ross Estate Law. A boutique firm that aims to provide world class representation to everyday clients with reasonable flat fees and exceptional client service.
+						At Ross Estate Law, we believe estate planning is more than just drafting documents—it's about building peace of mind and protecting your family's future. Based in Halifax and serving clients throughout Nova Scotia, we help individuals and families create comprehensive estate plans that reflect their values, secure their assets, and ensure their wishes are respected.
 					</p>
 					<p>
-						Megan's expertise in estate law was cultivated under the mentorship of the late Honourable Dr. Palmer of Burnet, Duckworth & Palmer LLP. Known for his distinguished style and timeless wisdom, Mr. Palmer imparted invaluable knowledge to Megan in the areas of estate planning, administration, probate and exceptional client care.
+						Estate planning isn't only for the elderly or the wealthy. Whether you are a young professional, a parent of growing children, or approaching retirement, having an estate plan in place ensures your loved ones are cared for and your decisions are clear. From wills and trusts to powers of attorney and personal care directives, we guide you through every step with clarity and compassion.
 					</p>
+
+					<h4>Our estate planning services include:</h4>
+					<p class="list-item">• Drafting wills that clearly outline how your assets will be distributed.</p>
+					<p class="list-item">• Creating trusts to protect and grow family wealth.</p>
+					<p class="list-item">• Establishing powers of attorney for financial and medical decision-making.</p>
+					<p class="list-item">• Preparing personal care directives to guide healthcare choices.</p>
+					<p class="list-item">• Coordinating with financial planners to align your estate with long-term goals.</p>
+
+					<h4>An example:</h4>
 					<p>
-						With a diverse professional background, Megan has experience in both large firms and boutique settings. She has also served as a professor of law and legal theory, bringing a well-rounded perspective to her practice. Her expertise extends to corporate, tax, and human rights law, making her uniquely equipped to address the complexities of estate matters with a comprehensive approach.
+						Imagine a couple in their early 40s, raising two children in Halifax, with a mortgage, some savings, and modest investments. They assume estate planning is something to deal with later in life. However, if one parent were suddenly unable to make decisions due to illness or accident, their family could face significant legal and financial challenges. By working with Ross Estate Law, they are able to create wills, name guardians for their children, set up powers of attorney, and prepare healthcare directives—ensuring their children are protected and decisions are made according to their wishes.
 					</p>
+
+					<h4>Why Nova Scotians choose Ross Estate Law:</h4>
+					<p class="list-item">• Local expertise in Halifax and across Nova Scotia's estate laws.</p>
+					<p class="list-item">• A personalized, step-by-step process to simplify complex decisions.</p>
+					<p class="list-item">• Compassionate guidance that reduces stress and family conflict.</p>
+					<p class="list-item">• A focus on protecting both your wealth and your loved ones' well-being.</p>
+
 					<p>
-						Megan has a law degree from the University of Calgary, a Master's in Laws (LLM) from New York University and a Doctorate in Law (SJD) from the University of Toronto.
+						Estate planning isn't something to put off until later—it's an essential part of protecting your family at every stage of life. Whether you're just starting a career, raising a family, or planning for retirement, Ross Estate Law will help you build a plan that grows with you.
 					</p>
-					<p>
-						When Megan isn't working, you'll find her either on the beach with her two dogs, Steve and Dave, in the garden or baking away.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="section">
-			<div class="education-section">
-				<div class="education-item">
-					<h3>2004-2009</h3>
-					<h4>University of Calgary, Faculty of Law</h4>
-					<p>Juris Doctorate. Deans List. Merv Leich Award for Constitutional Law. Award for top performance in Property Law.</p>
-				</div>
-				<div class="education-item">
-					<h3>2013-2014</h3>
-					<h4>New York University, Faculty of Law</h4>
-					<p>Masters of Laws, focus on international human rights law</p>
-				</div>
-				<div class="education-item">
-					<h3>2015-2020</h3>
-					<h4>University of Toronto, Faculty of Law</h4>
-					<p>Doctorate in Juridical Science (SJD). Focus on legal history of women at the League of Nations.</p>
 				</div>
 			</div>
 		</div>
@@ -237,15 +231,53 @@
 			text-decoration: underline;
 		}
 
-		/* CTA Section - white background */
+		/* White section styling - match young-families page */
+		#background {
+			background: #ffffff !important;
+			padding: 40px 0;
+		}
+
+		.about {
+			max-width: 1600px !important;
+			width: 100% !important;
+			margin: 0 auto;
+			padding: 40px 50px;
+		}
+
+		.about p {
+			font-size: 20px !important;
+			line-height: 1.6;
+			color: #333333 !important;
+		}
+
+		.about h3 {
+			font-size: 56px !important;
+			color: #333333 !important;
+			line-height: 1.3 !important;
+		}
+
+		.about h4 {
+			color: #333333 !important;
+			font-size: 20px !important;
+			margin: 20px 0 10px 0 !important;
+		}
+
+		.about .list-item {
+			color: #333333 !important;
+			font-size: 20px !important;
+			line-height: 1.3 !important;
+			margin: 5px 0 5px 20px !important;
+			padding: 0 !important;
+		}
+
+		/* CTA Section */
 		.cta-section {
 			text-align: center;
 			max-width: 800px;
 			margin: 50px auto;
 			padding: 40px 30px;
-			background: #ffffff;
+			background: #f5f5f5;
 			border-radius: 8px;
-			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 		}
 
 		.cta-section h3 {

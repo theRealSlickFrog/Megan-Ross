@@ -3,13 +3,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>About - Puppy Website Template</title>
+	<title>Legal Transition Services - Ross Estate Law</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 	<div id="header">
 		<div>
-			<a href="index.html" class="logo">PugSureWoi</a>
+			<a href="index.html" class="logo">Ross Estate Law</a>
 		</div>
 	</div>
 	<div id="navigation">
@@ -18,14 +19,14 @@
 				<li>
 					<a class="home" href="index.html">Home</a>
 				</li>
-				<li class="current dropdown">
+				<li class="dropdown">
 					<a class="about" href="about.html">About</a>
 					<div class="dropdown-content">
 						<a href="about.html">Dr. Megan Ross</a>
 						<a href="our-process.html">Our Process</a>
 					</div>
 				</li>
-				<li class="dropdown">
+				<li class="current dropdown">
 					<a class="services" href="estate-planning.html">Services</a>
 					<div class="dropdown-content services-dropdown">
 						<a href="estate-planning.html">Estate Planning</a>
@@ -44,42 +45,35 @@
 		<div id="background">
 			<div>
 				<div class="about">
-					<h3>About Dr. Megan Ross</h3>
-					<h4>Personal Profile</h4>
+					<h3>Legal Transition Services for Life's Changes</h3>
 					<p>
-						Megan was called to the bar in Alberta in 2010, with the Honourable Justice Papperny of the Alberta Court of Appeal presiding over the ceremony. Justice Papperny's inspiring words have resonated with Megan throughout her career. She emphasized the challenges women face in the legal industry, urging that the profession would not improve until women began to remain in it and work toward changing it. This message was pivotal in inspiring the founding of Ross Estate Law. A boutique firm that aims to provide world class representation to everyday clients with reasonable flat fees and exceptional client service.
+						Life is full of transitions, and each new chapter brings important legal considerations. At Ross Estate Law, based in Halifax, we provide legal transition services to clients across Nova Scotia to ensure your estate plan and legal documents stay current as your circumstances evolve.
 					</p>
 					<p>
-						Megan's expertise in estate law was cultivated under the mentorship of the late Honourable Dr. Palmer of Burnet, Duckworth & Palmer LLP. Known for his distinguished style and timeless wisdom, Mr. Palmer imparted invaluable knowledge to Megan in the areas of estate planning, administration, probate and exceptional client care.
+						Whether you're entering retirement, relocating, downsizing, selling a business, or planning for long-term care, these life events often raise complex legal questions. Our role is to simplify the process, protect your interests, and update your documents so you can move forward with confidence.
 					</p>
+
+					<h4>Our legal transition services include:</h4>
+					<p class="list-item">• Reviewing and updating wills, powers of attorney, and personal care directives.</p>
+					<p class="list-item">• Supporting retirement planning, including healthcare and financial considerations.</p>
+					<p class="list-item">• Assisting with the sale or succession of family businesses.</p>
+					<p class="list-item">• Advising on downsizing, real estate transfers, or relocations within or outside Nova Scotia.</p>
+					<p class="list-item">• Ensuring your estate plan adapts to changing laws and personal circumstances.</p>
+
+					<h4>An example:</h4>
 					<p>
-						With a diverse professional background, Megan has experience in both large firms and boutique settings. She has also served as a professor of law and legal theory, bringing a well-rounded perspective to her practice. Her expertise extends to corporate, tax, and human rights law, making her uniquely equipped to address the complexities of estate matters with a comprehensive approach.
+						Consider a Nova Scotia couple in their 60s, planning to downsize from their longtime family home in Halifax to a smaller property outside the city. They also want to ensure their adult children are fairly provided for, and that their medical directives reflect their current wishes. At Ross Estate Law, we review their existing wills, update powers of attorney, and coordinate with their financial planner to align the estate with their retirement goals. By the time they move, they have peace of mind knowing their legal documents reflect their new stage of life.
 					</p>
+
+					<h4>Why our clients trust us for life transitions:</h4>
+					<p class="list-item">• Local knowledge of Halifax and Nova Scotia property and estate laws.</p>
+					<p class="list-item">• Proactive planning that keeps legal documents relevant and up to date.</p>
+					<p class="list-item">• Compassionate, practical advice that makes complex changes easier.</p>
+					<p class="list-item">• A long-term relationship approach—helping clients not just once, but at every stage of life.</p>
+
 					<p>
-						Megan has a law degree from the University of Calgary, a Master's in Laws (LLM) from New York University and a Doctorate in Law (SJD) from the University of Toronto.
+						Life doesn't stand still, and neither should your estate plan. At Ross Estate Law, we ensure that as you move through life's transitions, your legal foundation remains strong, current, and supportive of your future goals.
 					</p>
-					<p>
-						When Megan isn't working, you'll find her either on the beach with her two dogs, Steve and Dave, in the garden or baking away.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="section">
-			<div class="education-section">
-				<div class="education-item">
-					<h3>2004-2009</h3>
-					<h4>University of Calgary, Faculty of Law</h4>
-					<p>Juris Doctorate. Deans List. Merv Leich Award for Constitutional Law. Award for top performance in Property Law.</p>
-				</div>
-				<div class="education-item">
-					<h3>2013-2014</h3>
-					<h4>New York University, Faculty of Law</h4>
-					<p>Masters of Laws, focus on international human rights law</p>
-				</div>
-				<div class="education-item">
-					<h3>2015-2020</h3>
-					<h4>University of Toronto, Faculty of Law</h4>
-					<p>Doctorate in Juridical Science (SJD). Focus on legal history of women at the League of Nations.</p>
 				</div>
 			</div>
 		</div>
@@ -237,15 +231,53 @@
 			text-decoration: underline;
 		}
 
-		/* CTA Section - white background */
+		/* White section styling - match estate-planning page */
+		#background {
+			background: #ffffff !important;
+			padding: 40px 0;
+		}
+
+		.about {
+			max-width: 1600px !important;
+			width: 100% !important;
+			margin: 0 auto;
+			padding: 40px 50px;
+		}
+
+		.about p {
+			font-size: 20px !important;
+			line-height: 1.6;
+			color: #333333 !important;
+		}
+
+		.about h3 {
+			font-size: 56px !important;
+			color: #333333 !important;
+			line-height: 1.3 !important;
+		}
+
+		.about h4 {
+			color: #333333 !important;
+			font-size: 20px !important;
+			margin: 20px 0 10px 0 !important;
+		}
+
+		.about .list-item {
+			color: #333333 !important;
+			font-size: 20px !important;
+			line-height: 1.3 !important;
+			margin: 5px 0 5px 20px !important;
+			padding: 0 !important;
+		}
+
+		/* CTA Section */
 		.cta-section {
 			text-align: center;
 			max-width: 800px;
 			margin: 50px auto;
 			padding: 40px 30px;
-			background: #ffffff;
+			background: #f5f5f5;
 			border-radius: 8px;
-			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 		}
 
 		.cta-section h3 {
