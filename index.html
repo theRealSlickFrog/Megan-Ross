@@ -3,14 +3,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Puppy Website Template</title>
+	<title>Ross Estate Law - Halifax Estate Planning & Probate Services</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 	<div id="header">
 		<div>
-			<a href="index.html" class="logo">PugSureWoi</a>
+			<a href="index.html" class="logo">Ross Estate Law</a>
 		</div>
 	</div>
 	<div id="navigation">
@@ -141,7 +141,7 @@
 				<a href="about.html">About</a>
 			</li>
 			<li>
-				<a href="services.html">Services</a>
+				<a href="estate-planning.html">Services</a>
 			</li>
 			<li>
 				<a href="blog.html">Blog</a>
@@ -150,6 +150,57 @@
 	</div>
 
 	<style>
+		/* Navigation menu styling */
+		#navigation div ul li a {
+			font-size: 28px !important;
+		}
+
+		/* Dropdown Menu Styles */
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #ffffff;
+			width: 170px !important;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 9999;
+			top: 54px;
+			left: 0;
+			border-radius: 5px;
+		}
+
+		.dropdown-content.services-dropdown {
+			width: 240px !important;
+			left: 20px !important;
+		}
+
+		.dropdown-content a {
+			color: #333333 !important;
+			padding: 8px 12px !important;
+			text-decoration: none !important;
+			display: block !important;
+			font-size: 20px !important;
+			font-weight: normal !important;
+			text-transform: none !important;
+			text-shadow: none !important;
+			background: none !important;
+			line-height: normal !important;
+			height: auto !important;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #f1f1f1 !important;
+			color: #333333 !important;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
 		.services-description {
 			max-width: 800px;
 			margin: 40px auto;
