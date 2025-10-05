@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Editor - Ross Estate Law</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .editor-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #8ab4a8;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        input[type="password"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: #8ab4a8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #6b9d8f;
+        }
+
+        .logout-btn {
+            background: #e8a89a;
+            float: right;
+        }
+
+        .logout-btn:hover {
+            background: #d49c6a;
+        }
+
+        .page-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: #d32f2f;
+            margin-top: 10px;
+        }
+
+        .success {
+            color: #388e3c;
+            margin-top: 10px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-radius: 4px;
+        }
+
+        .content-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 4px;
+            border-left: 4px solid #8ab4a8;
+        }
+
+        .content-path {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .instructions h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #856404;
+        }
+
+        .instructions li {
+            margin: 8px 0;
+        }
+
+        .download-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            border: 2px solid #4caf50;
+        }
+
+        .download-btn {
+            background: #4caf50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            font-weight: 600;
+        }
+
+        .download-btn:hover {
+            background: #45a049;
+        }
+
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h1>Content Editor Login</h1>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <button onclick="login()">Login</button>
+        <p class="error" id="loginError" style="display: none;">Incorrect password</p>
+    </div>
+
+    <div class="editor-container" id="editorContainer">
+        <h1>Ross Estate Law - Content Editor</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        <div style="clear: both;"></div>
+
+        <div class="instructions">
+            <h3>📝 How to use this editor:</h3>
+            <ol>
+                <li>Edit the text content in the fields below</li>
+                <li>Click "Generate Updated Files" when done</li>
+                <li>Download each updated HTML file</li>
+                <li>Replace the files in your website folder</li>
+                <li>Commit and push to GitHub to publish changes</li>
+            </ol>
+        </div>
+
+        <div id="contentSections"></div>
+
+        <button onclick="generateFiles()" style="width: 100%; padding: 15px; font-size: 18px; margin-top: 20px;">
+            💾 Generate Updated Files
+        </button>
+
+        <div id="downloadSection"></div>
+    </div>
+
+    <script>
+        // Password - change this to your preferred password
+        const EDITOR_PASSWORD = 'rosslaw2024';
+
+        // Hardcoded content structure
+        const pageContent = {
+            'index.html': {
+                title: 'Home Page',
+                fields: [
+                    { id: 'home-h1', label: 'Main Heading', value: 'YOUR TRUSTED<br>ESTATE<br>PARTNER', selector: '#background h1' },
+                    { id: 'home-tagline', label: 'Tagline', value: 'Professional estate services tailored for you.', selector: '#background p' },
+                    { id: 'home-desc1', label: 'Service Description 1', type: 'textarea', value: "Every Halifax family's situation is unique, and your estate planning needs should reflect that personal reality. Whether you're creating your first will as a young professional, planning comprehensive legal protection for a growing family, or navigating the complex emotional and legal challenges of probate administration after losing a loved one.", selector: '.services-description p:nth-child(1)' },
+                    { id: 'home-desc2', label: 'Service Description 2', type: 'textarea', value: 'Our experienced estate planning lawyers provide clear, compassionate legal guidance tailored to your specific circumstances. Our comprehensive estate law services ensure your wishes are documented properly, your assets are protected, and your loved ones in Nova Scotia have the security they deserve.', selector: '.services-description p:nth-child(2)' },
+                    { id: 'home-desc3', label: 'Service Description 3', type: 'textarea', value: 'From straightforward wills and powers of attorney to complex multi-generational estate planning structures involving trusts and tax planning, our Halifax estate lawyers help Nova Scotia families understand their legal options and make informed decisions with complete confidence.', selector: '.services-description p:nth-child(3)' },
+                    { id: 'home-desc4', label: 'Service Description 4', type: 'textarea', value: 'Our transparent flat-fee legal services approach means no surprise bills or hidden costs—just honest, professional estate planning and probate legal services delivered with care when you need them most. We believe quality legal protection should be accessible to all Halifax and Nova Scotia residents, not just the wealthy.', selector: '.services-description p:nth-child(4)' }
+                ]
+            },
+            'about.html': {
+                title: 'About Page',
+                fields: [
+                    { id: 'about-title', label: 'Page Title', value: 'About Dr. Megan Ross', selector: '.about h3' },
+                    { id: 'about-p1', label: 'Personal Profile Paragraph 1', type: 'textarea', value: 'Megan was called to the bar in Alberta in 2010, with the Honourable Justice Papperny of the Alberta Court of Appeal presiding over the ceremony. Justice Papperny\'s inspiring words have resonated with Megan throughout her career. She emphasized the challenges women face in the legal industry, urging that the profession would not improve until women began to remain in it and work toward changing it. This message was pivotal in inspiring the founding of Ross Estate Law. A boutique firm that aims to provide world class representation to everyday clients with reasonable flat fees and exceptional client service.', selector: '.about p:nth-of-type(1)' }
+                ]
+            },
+            'estate-planning.html': {
+                title: 'Estate Planning Page',
+                fields: [
+                    { id: 'ep-title', label: 'Page Title', value: 'Estate Planning<br>in Halifax, Nova Scotia', selector: '.about h3' },
+                    { id: 'ep-intro1', label: 'Introduction Paragraph 1', type: 'textarea', value: 'At Ross Estate Law, we believe estate planning is more than just drafting documents—it\'s about building peace of mind and protecting your family\'s future. Based in Halifax and serving clients throughout Nova Scotia, we help individuals and families create comprehensive estate plans that reflect their values, secure their assets, and ensure their wishes are respected.', selector: '.about p:nth-of-type(1)' }
+                ]
+            }
+        };
+
+        function login() {
+            const password = document.getElementById('password').value;
+            if (password === EDITOR_PASSWORD) {
+                sessionStorage.setItem('editorAuth', 'true');
+                showEditor();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+
+        function logout() {
+            sessionStorage.removeItem('editorAuth');
+            location.reload();
+        }
+
+        function showEditor() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('editorContainer').style.display = 'block';
+            loadContent();
+        }
+
+        function loadContent() {
+            const container = document.getElementById('contentSections');
+            container.innerHTML = '';
+
+            for (const [filename, pageData] of Object.entries(pageContent)) {
+                const pageSection = document.createElement('div');
+                pageSection.className = 'page-section';
+                pageSection.innerHTML = `<h2>${pageData.title} (${filename})</h2>`;
+
+                pageData.fields.forEach(field => {
+                    const item = document.createElement('div');
+                    item.className = 'content-item';
+
+                    const inputHtml = field.type === 'textarea'
+                        ? `<textarea id="${field.id}" data-file="${filename}" data-selector="${field.selector}">${field.value}</textarea>`
+                        : `<input type="text" id="${field.id}" data-file="${filename}" data-selector="${field.selector}" value="${field.value}">`;
+
+                    item.innerHTML = `
+                        <div class="content-path">${field.selector}</div>
+                        <label for="${field.id}">${field.label}:</label>
+                        ${inputHtml}
+                    `;
+
+                    pageSection.appendChild(item);
+                });
+
+                container.appendChild(pageSection);
+            }
+        }
+
+        async function generateFiles() {
+            const downloadSection = document.getElementById('downloadSection');
+            downloadSection.innerHTML = '<p>Generating files...</p>';
+
+            const fileUpdates = {};
+
+            // Collect all updates grouped by file
+            document.querySelectorAll('input[data-file], textarea[data-file]').forEach(input => {
+                const filename = input.dataset.file;
+                const selector = input.dataset.selector;
+                const newValue = input.value;
+
+                if (!fileUpdates[filename]) {
+                    fileUpdates[filename] = [];
+                }
+
+                fileUpdates[filename].push({ selector, value: newValue });
+            });
+
+            // Fetch and update each file
+            const downloads = [];
+
+            for (const [filename, updates] of Object.entries(fileUpdates)) {
+                try {
+                    // For this to work, we need to fetch from the parent directory
+                    // This will work when deployed on a web server
+                    const response = await fetch(`/${filename}`);
+                    let html = await response.text();
+
+                    // Parse HTML
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+
+                    // Apply updates
+                    updates.forEach(update => {
+                        const element = doc.querySelector(update.selector);
+                        if (element) {
+                            element.innerHTML = update.value;
+                        }
+                    });
+
+                    // Generate download
+                    const updatedHtml = '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+                    const blob = new Blob([updatedHtml], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+
+                    downloads.push({ filename, url });
+
+                } catch (error) {
+                    console.error(`Error processing ${filename}:`, error);
+                }
+            }
+
+            // Display download links
+            if (downloads.length > 0) {
+                let html = '<div class="download-section"><h3>✅ Files Ready to Download</h3><p>Download the updated files below and replace them in your website folder:</p>';
+
+                downloads.forEach(({ filename, url }) => {
+                    html += `<a href="${url}" download="${filename}" class="download-btn">📥 Download ${filename}</a>`;
+                });
+
+                html += '<div class="note"><strong>Next steps:</strong><ol style="margin-left: 20px; margin-top: 10px;"><li>Download all files</li><li>Replace the original files in your website folder</li><li>Commit and push to GitHub</li></ol></div></div>';
+
+                downloadSection.innerHTML = html;
+            } else {
+                downloadSection.innerHTML = '<p class="error">No files could be generated. Make sure you\'re running this on a web server.</p>';
+            }
+        }
+
+        // Check authentication on load
+        if (sessionStorage.getItem('editorAuth') === 'true') {
+            showEditor();
+        }
+
+        // Handle Enter key on password input
+        document.getElementById('password')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') login();
+        });
+    </script>
+</body>
+</html>
