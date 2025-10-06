@@ -138,6 +138,8 @@
 			cursor: pointer;
 			text-decoration: none;
 			color: inherit;
+			height: 200px;
+			overflow: hidden;
 		}
 
 		.blog-post-preview:hover {
@@ -149,7 +151,7 @@
 		.blog-post-preview .thumbnail {
 			flex-shrink: 0;
 			width: 250px;
-			height: 200px;
+			height: 150px;
 			object-fit: cover;
 			border-radius: 8px;
 		}
@@ -159,6 +161,7 @@
 			flex: 1;
 			display: flex;
 			flex-direction: column;
+			overflow: hidden;
 		}
 
 		/* Blog Post Title */
@@ -186,8 +189,13 @@
 			color: #555;
 			font-size: 16px;
 			line-height: 1.6;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 			flex: 1;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
 		}
 
 		/* Read More Link */
