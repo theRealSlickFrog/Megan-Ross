@@ -28,14 +28,16 @@ img {
   border: 0;
 }
 
-/* === BLOG SECTION (Updated) === */
-#blog-posts {
+/* === BLOG STYLES (Scoped) === */
+.blog-page #blog-posts,
+.blog-post-page #blog-posts {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.blog-post-preview {
+.blog-page .blog-post-preview,
+.blog-post-page .blog-post-preview {
   background: white;
   margin: 0 0 30px 0;
   padding: 20px;
@@ -51,12 +53,14 @@ img {
   overflow: hidden;
 }
 
-.blog-post-preview:hover {
+.blog-page .blog-post-preview:hover,
+.blog-post-page .blog-post-preview:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
-.blog-post-preview .thumbnail {
+.blog-page .blog-post-preview .thumbnail,
+.blog-post-page .blog-post-preview .thumbnail {
   flex-shrink: 0;
   width: 300px;
   height: 180px;
@@ -64,7 +68,8 @@ img {
   border-radius: 12px;
 }
 
-.blog-post-preview .post-info {
+.blog-page .blog-post-preview .post-info,
+.blog-post-page .blog-post-preview .post-info {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -73,7 +78,8 @@ img {
   overflow: hidden;
 }
 
-.blog-post-preview h3 {
+.blog-page .blog-post-preview h3,
+.blog-post-page .blog-post-preview h3 {
   color: #2c2c2c;
   font-size: 36px;
   font-weight: bold;
@@ -82,7 +88,8 @@ img {
   white-space: normal;
 }
 
-.blog-post-preview .excerpt {
+.blog-page .blog-post-preview .excerpt,
+.blog-post-page .blog-post-preview .excerpt {
   color: #555;
   font-size: 20px;
   line-height: 1.5;
@@ -95,7 +102,8 @@ img {
   -webkit-box-orient: vertical;
 }
 
-.blog-post-preview .date {
+.blog-page .blog-post-preview .date,
+.blog-post-page .blog-post-preview .date {
   color: #8ab4a8;
   font-size: 16px;
   font-weight: 600;
@@ -105,7 +113,8 @@ img {
   letter-spacing: 0.5px;
 }
 
-.blog-post-preview .read-more {
+.blog-page .blog-post-preview .read-more,
+.blog-post-page .blog-post-preview .read-more {
   color: #8ab4a8;
   font-size: 18px;
   font-weight: bold;
@@ -115,48 +124,22 @@ img {
   margin-top: 10px;
 }
 
-.blog-post-preview:hover .read-more {
+.blog-page .blog-post-preview:hover .read-more,
+.blog-post-page .blog-post-preview:hover .read-more {
   color: #6b9d8f;
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .blog-post-preview {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .blog-post-preview .thumbnail {
-    width: 100%;
-    height: 200px;
-  }
-
-  .blog-post-preview .post-info {
-    padding-top: 10px;
-  }
-
-  .blog-post-preview h3 {
-    font-size: 28px;
-  }
-
-  .blog-post-preview .excerpt {
-    font-size: 18px;
-  }
-
-  .blog-post-preview .date {
-    font-size: 14px;
-  }
-}
-/* === END BLOG SECTION === */
-
-/* === BLOG HEADER SECTION (Fixed and Centered) === */
-#body #background {
+/* Blog header section */
+.blog-page #background,
+.blog-post-page #background {
   background: #ffffff;
   padding: 60px 0 40px;
   text-align: center;
 }
 
-#body #background h1 {
+.blog-page #background h1,
+.blog-post-page #background h1 {
   color: #000000;
   font-family: "Times New Roman", Times, serif;
   font-size: 48px;
@@ -164,21 +147,56 @@ img {
   letter-spacing: 1px;
   line-height: 1.3;
   margin: 0;
-  text-align: center;
   text-transform: uppercase;
 }
 
-#body #background p {
+.blog-page #background p,
+.blog-post-page #background p {
   color: #333333;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 30px;
   margin: 15px 0 0;
-  text-align: center;
 }
-/* === END BLOG HEADER === */
 
-/* Navigation + Other Layout Styles (Unchanged) */
+/* Responsive blog styles */
+@media (max-width: 768px) {
+  .blog-page .blog-post-preview,
+  .blog-post-page .blog-post-preview {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .blog-page .blog-post-preview .thumbnail,
+  .blog-post-page .blog-post-preview .thumbnail {
+    width: 100%;
+    height: 200px;
+  }
+
+  .blog-page .blog-post-preview .post-info,
+  .blog-post-page .blog-post-preview .post-info {
+    padding-top: 10px;
+  }
+
+  .blog-page .blog-post-preview h3,
+  .blog-post-page .blog-post-preview h3 {
+    font-size: 28px;
+  }
+
+  .blog-page .blog-post-preview .excerpt,
+  .blog-post-page .blog-post-preview .excerpt {
+    font-size: 18px;
+  }
+
+  .blog-page .blog-post-preview .date,
+  .blog-post-page .blog-post-preview .date {
+    font-size: 14px;
+  }
+}
+
+/* === END BLOG === */
+
+/* All other original styles unchanged below... */
 #header {
   background: url(../images/bg-gray.png) repeat-x left top;
   height: 306px;
@@ -254,7 +272,6 @@ img {
 #navigation div ul li a.services { padding: 0 28px 0 110px; }
 #navigation div ul li a.blog { padding: 0 28px 0 140px; }
 
-/* Dropdown styles */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -265,7 +282,7 @@ img {
   position: absolute;
   background-color: #ffffff;
   width: 170px !important;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   top: 54px;
   left: 0;
