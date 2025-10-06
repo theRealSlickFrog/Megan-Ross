@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Test of the Blog
+title: Chickens Chickens Everywhere
 date: 2025-10-06T14:10:00.000-03:00
 thumbnail: /images/blog/joes-chicken.jpg
 ---
