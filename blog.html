@@ -1,333 +1,648 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Blog - Ross Estate Law</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<meta charset="UTF-8">
+	<title>Blog - Ross Estate Law</title>
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <style>
-    /* Base page setup */
-    body {
-      background: #0b080c;
-      color: #ffffff;
-      font-family: 'QuestrialRegular', sans-serif;
-      font-size: 16px;
-      margin: 0;
-      min-width: 940px;
-      padding: 0;
-    }
+	<style>
+		/* Base page setup */
+		body {
+			background: #0b080c;
+			color: #ffffff;
+			font-family: 'QuestrialRegular', sans-serif;
+			font-size: 16px;
+			margin: 0;
+			min-width: 940px;
+			padding: 0;
+		}
 
-    a {
-      outline: none;
-      color: inherit;
-    }
+		a {
+			outline: none;
+			color: inherit;
+		}
 
-    img {
-      border: 0;
-    }
+		img {
+			border: 0;
+		}
 
-    /* Header */
-    #header {
-      background: url(../images/bg-gray.png) repeat-x left top;
-      height: 306px;
-      position: relative;
-      width: 100%;
-      z-index: 2;
-    }
+		/* Header */
+		#header {
+			background: url(images/bg-gray.png) repeat-x left top;
+			height: 306px;
+			position: relative;
+			width: 100%;
+			z-index: 2;
+		}
 
-    #header div {
-      margin: 0 auto;
-      width: 940px;
-    }
+		#header div {
+			margin: 0 auto;
+			width: 940px;
+		}
 
-    #header div a.logo {
-      background: url(../images/dogs.jpg) no-repeat center top;
-      display: block;
-      height: 306px;
-      text-indent: -99999px;
-    }
+		#header div a.logo {
+			background: url(images/dogs.jpg) no-repeat center top;
+			display: block;
+			height: 306px;
+			text-indent: -99999px;
+		}
 
-    /* Navigation */
-    #navigation {
-      background: url(../images/bg-gray.png) repeat-x left top;
-      border-bottom: 1px solid #999999;
-      height: 54px;
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-    }
+		/* Navigation */
+		#navigation {
+			background: url(images/bg-gray.png) repeat-x left top;
+			border-bottom: 1px solid #999999;
+			height: 54px;
+			position: sticky;
+			top: 0;
+			width: 100%;
+			z-index: 100;
+		}
 
-    #navigation div {
-      margin: 0 auto;
-      width: 1000px;
-    }
+		#navigation div {
+			margin: 0 auto;
+			width: 1000px;
+		}
 
-    #navigation div ul {
-      list-style: none;
-      margin: 0;
-      overflow: visible;
-      padding: 0;
-    }
+		#navigation div ul {
+			list-style: none;
+			margin: 0;
+			overflow: visible;
+			padding: 0;
+		}
 
-    #navigation div ul li {
-      float: left;
-      margin: 0;
-      position: relative;
-      width: 235px;
-    }
+		#navigation div ul li {
+			float: left;
+			margin: 0;
+			position: relative;
+			width: 235px;
+		}
 
-    #navigation div ul li.current a,
-    #navigation div ul li.current a:hover,
-    #navigation div ul li a:hover {
-      background: url(../images/menu-selected.png) no-repeat right center;
-      color: #424141;
-    }
+		#navigation div ul li.current a,
+		#navigation div ul li.current a:hover,
+		#navigation div ul li a:hover {
+			background: url(images/menu-selected.png) no-repeat right center;
+			color: #424141;
+		}
 
-    #navigation div ul li a {
-      background: none;
-      color: #666666;
-      display: inline-block;
-      font-size: 20px;
-      font-weight: bold;
-      height: 54px;
-      line-height: 54px;
-      padding: 0;
-      text-decoration: none;
-      text-transform: uppercase;
-      text-shadow: 0 1px #ffffff;
-    }
+		#navigation div ul li a {
+			background: none;
+			color: #666666;
+			display: inline-block;
+			font-size: 28px;
+			font-weight: bold;
+			height: 54px;
+			line-height: 54px;
+			padding: 0;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-shadow: 0 1px #ffffff;
+		}
 
-    #navigation div ul li a.home { padding: 0 28px 0 10px; }
-    #navigation div ul li a.about { padding: 0 28px 0 55px; }
-    #navigation div ul li a.services { padding: 0 28px 0 110px; }
-    #navigation div ul li a.blog { padding: 0 28px 0 140px; }
+		#navigation div ul li a.home { padding: 0 28px 0 10px; }
+		#navigation div ul li a.about { padding: 0 28px 0 55px; }
+		#navigation div ul li a.services { padding: 0 28px 0 110px; }
+		#navigation div ul li a.blog { padding: 0 28px 0 140px; }
 
-    /* Dropdown Menu */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+		/* Dropdown Menu */
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #ffffff;
-      width: 170px !important;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-      top: 54px;
-      left: 0;
-      border-radius: 5px;
-    }
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #ffffff;
+			width: 170px !important;
+			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+			z-index: 9999;
+			top: 54px;
+			left: 0;
+			border-radius: 5px;
+		}
 
-    .dropdown-content.services-dropdown {
-      width: 240px !important;
-      left: 20px !important;
-    }
+		.dropdown-content.services-dropdown {
+			width: 240px !important;
+			left: 20px !important;
+		}
 
-    .dropdown-content a {
-      color: #333333 !important;
-      padding: 8px 12px !important;
-      text-decoration: none !important;
-      display: block !important;
-      font-size: 20px !important;
-      font-weight: normal !important;
-      text-transform: none !important;
-      text-shadow: none !important;
-      background: none !important;
-      line-height: normal !important;
-      height: auto !important;
-    }
+		.dropdown-content a {
+			color: #333333 !important;
+			padding: 8px 12px !important;
+			text-decoration: none !important;
+			display: block !important;
+			font-size: 20px !important;
+			font-weight: normal !important;
+			text-transform: none !important;
+			text-shadow: none !important;
+			background: none !important;
+			line-height: normal !important;
+			height: auto !important;
+		}
 
-    .dropdown-content a:hover {
-      background-color: #f1f1f1 !important;
-      color: #333333 !important;
-    }
+		.dropdown-content a:hover {
+			background-color: #f1f1f1 !important;
+			color: #333333 !important;
+		}
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
 
-    /* BLOG HEADER SECTION */
-    #background {
-      background: #ffffff;
-      padding: 60px 0 40px;
-      text-align: center;
-    }
+		/* Body */
+		#body {
+			background: #cac8c8 url(images/bg-content2.png) repeat-x left top;
+			width: 100%;
+		}
 
-    #background h1 {
-      color: #000000;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 48px;
-      font-weight: normal;
-      letter-spacing: 1px;
-      line-height: 1.3;
-      margin: 0;
-      text-transform: uppercase;
-    }
+		/* BLOG HEADER SECTION */
+		#background {
+			background: #ffffff url(images/bg-content.jpg) no-repeat center bottom;
+			min-height: 420px;
+			padding: 0;
+			width: auto;
+		}
 
-    #background p {
-      color: #333333;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      line-height: 30px;
-      margin: 15px 0 0;
-    }
+		#background > div {
+			margin: 0 auto;
+			overflow: hidden;
+			padding: 80px 0 200px;
+			width: 940px;
+		}
 
-    /* BLOG POSTS LIST */
-    #blog-posts {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+		#background > div > div {
+			margin: 0;
+			padding: 0;
+			width: 570px;
+		}
 
-    .blog-post-preview {
-      background: white;
-      margin: 0 0 30px 0;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      gap: 24px;
-      text-decoration: none;
-      color: inherit;
-      min-height: 180px;
-      overflow: hidden;
-    }
+		#background > div > div > div {
+			padding: 61px 0 0 20px;
+			width: 520px;
+		}
 
-    .blog-post-preview:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-    }
+		#background h1 {
+			color: #000000;
+			font-family: "Times New Roman", Times, serif;
+			font-size: 67px;
+			font-weight: normal;
+			letter-spacing: 3px;
+			line-height: 75px;
+			margin: 0;
+			text-align: center;
+			text-transform: uppercase;
+		}
 
-    .blog-post-preview img.thumbnail {
-      flex-shrink: 0;
-      width: 300px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
+		#background p {
+			color: #000000;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 18px;
+			line-height: 30px;
+			margin: 15px 0 0;
+			text-align: center;
+		}
 
-    .blog-post-preview .post-info {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+		/* Content Section */
+		#content-section {
+			background: #0b080c;
+			margin-top: -20vh;
+			padding: 0;
+			position: relative;
+			width: 100%;
+			z-index: 2;
+		}
 
-    .blog-post-preview h3 {
-      color: #2c2c2c;
-      font-size: 36px;
-      font-weight: bold;
-      margin: 0 0 10px 0;
-      line-height: 1.3;
-    }
+		.blog-header {
+			color: white;
+			margin: 0;
+			padding: 80px 5% 60px;
+			width: 90%;
+		}
 
-    .blog-post-preview p.excerpt {
-      color: #555;
-      font-size: 20px;
-      line-height: 1.5;
-      margin: 0 0 10px 0;
-    }
+		.blog-header h2 {
+			color: white;
+			font-size: 48px;
+			font-weight: bold;
+			margin: 0 0 20px 0;
+			text-align: left;
+		}
 
-    .blog-post-preview .date {
-      color: #8ab4a8;
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: auto;
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+		.blog-header hr {
+			border: none;
+			border-top: 2px solid white;
+			margin: 0 0 40px 0;
+			width: 100%;
+		}
 
-    .blog-post-preview .read-more {
-      color: #8ab4a8;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 10px;
-    }
+		/* BLOG POSTS LIST */
+		#blog-posts {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
 
-    .blog-post-preview:hover .read-more {
-      color: #6b9d8f;
-      text-decoration: underline;
-    }
+		.blog-post-preview {
+			background: white;
+			margin: 0 0 30px 0;
+			padding: 20px;
+			border-radius: 12px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+			transition: transform 0.2s, box-shadow 0.2s;
+			display: flex;
+			gap: 24px;
+			text-decoration: none;
+			color: inherit;
+			min-height: 180px;
+			overflow: hidden;
+		}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .blog-post-preview {
-        flex-direction: column;
-        padding: 15px;
-      }
+		.blog-post-preview:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+		}
 
-      .blog-post-preview img.thumbnail {
-        width: 100%;
-        height: 200px;
-      }
+		.blog-post-preview img.thumbnail {
+			flex-shrink: 0;
+			width: 300px;
+			height: 180px;
+			object-fit: cover;
+			border-radius: 12px;
+		}
 
-      .blog-post-preview h3 {
-        font-size: 28px;
-      }
+		.blog-post-preview .post-info {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 
-      .blog-post-preview p.excerpt {
-        font-size: 18px;
-      }
+		.blog-post-preview h3 {
+			color: #2c2c2c;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0 0 10px 0;
+			line-height: 1.3;
+		}
 
-      .blog-post-preview .date {
-        font-size: 14px;
-      }
-    }
+		.blog-post-preview .excerpt {
+			color: #555;
+			font-size: 20px;
+			line-height: 1.5;
+			margin: 0 0 10px 0;
+		}
 
-    /* Footer */
-    #footer {
-      margin: 0 auto;
-      min-height: 85px;
-      overflow: hidden;
-      width: 940px;
-    }
+		.blog-post-preview .date {
+			color: #8ab4a8;
+			font-size: 16px;
+			font-weight: 600;
+			margin-top: auto;
+			display: block;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
 
-    #footer ul {
-      float: left;
-      list-style: none;
-      margin: 3px 0 0;
-      overflow: hidden;
-      padding: 33px 0 0;
-      width: 220px;
-    }
+		.blog-post-preview .read-more {
+			color: #8ab4a8;
+			font-size: 18px;
+			font-weight: bold;
+			text-decoration: none;
+			margin-top: 10px;
+		}
 
-    #footer ul li {
-      border-left: 1px solid #85603a;
-      float: left;
-      height: 10px;
-    }
+		.blog-post-preview:hover .read-more {
+			color: #6b9d8f;
+			text-decoration: underline;
+		}
 
-    #footer ul li:first-child {
-      border: 0;
-    }
+		/* Contact Banner */
+		.contact-banner {
+			background: #2c2c2c;
+			color: white;
+			padding: 40px 0;
+			width: 100%;
+		}
 
-    #footer ul li a {
-      color: #85603a;
-      display: block;
-      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-      font-size: 10px;
-      line-height: 9px;
-      padding: 0 5px;
-      text-align: center;
-      text-decoration: none;
-    }
+		.contact-content {
+			margin: 0 auto;
+			max-width: 1200px;
+			padding: 0 20px;
+		}
 
-    #footer ul li a:hover {
-      color: #b6834f;
-    }
-  </style>
+		.contact-info h2 {
+			color: white;
+			font-size: 36px;
+			margin: 0 0 30px 0;
+			text-align: center;
+		}
+
+		.contact-details {
+			display: flex;
+			justify-content: center;
+			gap: 60px;
+			flex-wrap: wrap;
+		}
+
+		.contact-item {
+			text-align: center;
+		}
+
+		.contact-item span {
+			display: block;
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+		.contact-item .phone {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.contact-item .email {
+			font-size: 20px;
+			text-decoration: none;
+		}
+
+		.contact-item .address {
+			font-size: 16px;
+			line-height: 22px;
+		}
+
+		/* Footer */
+		#footer {
+			margin: 0 auto;
+			min-height: 85px;
+			overflow: hidden;
+			width: 940px;
+		}
+
+		#footer ul {
+			float: left;
+			list-style: none;
+			margin: 3px 0 0;
+			overflow: hidden;
+			padding: 33px 0 0;
+			width: 220px;
+		}
+
+		#footer ul li {
+			border-left: 1px solid #85603a;
+			float: left;
+			height: 10px;
+		}
+
+		#footer ul li:first-child {
+			border: 0;
+		}
+
+		#footer ul li a {
+			color: #85603a;
+			display: block;
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			font-size: 10px;
+			line-height: 9px;
+			padding: 0 5px;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		#footer ul li a:hover {
+			color: #b6834f;
+		}
+
+		/* Responsive */
+		@media (max-width: 768px) {
+			.blog-post-preview {
+				flex-direction: column;
+				padding: 15px;
+			}
+
+			.blog-post-preview img.thumbnail {
+				width: 100%;
+				height: 200px;
+			}
+
+			.blog-post-preview h3 {
+				font-size: 28px;
+			}
+
+			.blog-post-preview .excerpt {
+				font-size: 18px;
+			}
+
+			.blog-post-preview .date {
+				font-size: 14px;
+			}
+		}
+	</style>
 </head>
-
 <body>
+	<div id="header">
+		<div>
+			<a href="index.html" class="logo">Ross Estate Law</a>
+		</div>
+	</div>
+	<div id="navigation">
+		<div>
+			<ul>
+				<li>
+					<a class="home" href="index.html">Home</a>
+				</li>
+				<li class="dropdown">
+					<a class="about" href="about.html">About</a>
+					<div class="dropdown-content">
+						<a href="about.html">Dr. Megan Ross</a>
+						<a href="our-process.html">Our Process</a>
+					</div>
+				</li>
+				<li class="dropdown">
+					<a class="services" href="estate-planning.html">Services</a>
+					<div class="dropdown-content services-dropdown">
+						<a href="estate-planning.html">Estate Planning</a>
+						<a href="young-families.html">Estate Planning for Young Families</a>
+						<a href="probate-services.html">Executor and Probate Services</a>
+						<a href="legal-transition.html">Legal Transition Services</a>
+					</div>
+				</li>
+				<li class="current">
+					<a class="blog" href="blog.html">Blog</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="body">
+		<div id="background">
+			<div>
+				<div>
+					<div>
+						<h1>LEGAL INSIGHTS<br>& UPDATES</h1>
+						<p>
+							Professional legal information and estate planning insights.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content-section">
+			<div class="blog-header">
+				<h2>BLOG POSTS</h2>
+				<hr>
+				<div id="blog-posts">
+					<p style="text-align: center; margin: 40px 0;">Loading blog posts...</p>
+				</div>
+				<p style="text-align: center; margin: 20px 0; color: #999;">
+					<a href="/admin" style="color: #8ab4a8; text-decoration: underline;">Access Admin Panel</a> to create new blog posts.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="contact-banner">
+		<div class="contact-content">
+			<div class="contact-info">
+				<h2>Ross Estate Law</h2>
+				<div class="contact-details">
+					<div class="contact-item">
+						<span class="phone">(902) 403-0008</span>
+					</div>
+					<div class="contact-item">
+						<span class="email">megan@rossestatelaw.ca</span>
+					</div>
+					<div class="contact-item">
+						<span class="address">99 Wyse Road, Suite 1100<br>Dartmouth, Nova Scotia<br>B3A 4S5</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<ul>
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="about.html">About</a>
+			</li>
+			<li>
+				<a href="estate-planning.html">Services</a>
+			</li>
+			<li>
+				<a href="blog.html">Blog</a>
+			</li>
+		</ul>
+	</div>
 
-<!-- Keep your existing HTML content here (navigation, posts list, etc.) -->
-<!-- Just make sure there’s NO link to css/style.css -->
+	<script>
+		// Fetch and display blog posts
+		async function loadBlogPosts() {
+			try {
+				// Fetch the list of posts from the GitHub API
+				const response = await fetch('https://api.github.com/repos/theRealSlickFrog/Megan-Ross/contents/_posts');
+				const files = await response.json();
+
+				const blogContainer = document.getElementById('blog-posts');
+
+				if (!files || files.length === 0) {
+					blogContainer.innerHTML = '<p style="text-align: center; margin: 40px 0;">No blog posts yet. Create your first post in the admin panel!</p>';
+					return;
+				}
+
+				// Fetch each post's content
+				const posts = [];
+				for (const file of files) {
+					if (file.name.endsWith('.md')) {
+						const contentResponse = await fetch(file.download_url);
+						const content = await contentResponse.text();
+						posts.push(parseMarkdownPost(content, file.name));
+					}
+				}
+
+				// Sort by date (newest first)
+				posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+				// Display posts as previews
+				blogContainer.innerHTML = posts.map(post => {
+					const firstSentence = getFirstSentence(post.body);
+					const slug = post.slug || createSlug(post.title);
+
+					return `
+						<a href="blog-post.html?post=${slug}" class="blog-post-preview">
+							${post.thumbnail ? `<img src="${post.thumbnail}" alt="${escapeHtml(post.title)}" class="thumbnail">` : ''}
+							<div class="post-info">
+								<h3>${escapeHtml(post.title)}</h3>
+								<div class="excerpt">${firstSentence}</div>
+								<div class="date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+								<span class="read-more">Read More →</span>
+							</div>
+						</a>
+					`;
+				}).join('');
+
+			} catch (error) {
+				console.error('Error loading blog posts:', error);
+				document.getElementById('blog-posts').innerHTML = '<p style="text-align: center; margin: 40px 0;">Error loading blog posts. Please try again later.</p>';
+			}
+		}
+
+		// Parse markdown post file
+		function parseMarkdownPost(content, filename) {
+			const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+			const match = content.match(frontMatterRegex);
+
+			if (!match) return null;
+
+			const frontMatter = match[1];
+			const body = match[2];
+
+			const post = { body, filename };
+
+			// Parse front matter
+			frontMatter.split('\n').forEach(line => {
+				const [key, ...valueParts] = line.split(':');
+				if (key && valueParts.length) {
+					const value = valueParts.join(':').trim();
+					post[key.trim()] = value;
+				}
+			});
+
+			// Create slug from filename
+			post.slug = filename.replace('.md', '');
+
+			return post;
+		}
+
+		// Get first sentence from blog content
+		function getFirstSentence(text) {
+			if (!text) return '';
+
+			const plainText = text.replace(/[#*_`]/g, '').trim();
+
+			// Find the first sentence (ending with . ! or ?)
+			const match = plainText.match(/^[^.!?]+[.!?]/);
+			if (match) {
+				return match[0].trim();
+			}
+
+			// If no sentence ending found, return first 150 characters
+			return plainText.substring(0, 150).trim() + '...';
+		}
+
+		// Escape HTML to prevent XSS
+		function escapeHtml(text) {
+			const div = document.createElement('div');
+			div.textContent = text;
+			return div.innerHTML;
+		}
+
+		// Create URL-friendly slug from title
+		function createSlug(title) {
+			return title
+				.toLowerCase()
+				.replace(/[^a-z0-9]+/g, '-')
+				.replace(/^-|-$/g, '');
+		}
+
+		// Load posts when page loads
+		document.addEventListener('DOMContentLoaded', loadBlogPosts);
+	</script>
 
 </body>
 </html>
