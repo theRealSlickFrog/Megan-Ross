@@ -8,18 +8,18 @@ Note: this article provides legal information, not legal advice. Reading this ar
 
 A Power of Attorney (POA) is a legal document that grants an individual (the attorney) the authority to make decisions on behalf of another (the donor) regarding property and financial affairs. However, the exercise of this authority can be conditional, and certain circumstances must be met for the attorney to begin acting under the power granted. Here’s an overview of the conditions for when the attorney can exercise their authority in Nova Scotia:
 
-1. When the Attorney Can Exercise Authority (Section 8)**
+**1, When the Attorney Can Exercise Authority (Section 8)\*\***
 
 **General Rule (Section 8(1)):** The attorney is typically authorized to exercise their authority at any time **after the power of attorney is executed**, unless otherwise specified in the document.
 
-2. Conditions for Activation (Section 8(2))**
+**2. Conditions for Activation (Section 8(2))\*\***
 
 A Power of Attorney may specify that the attorney can only exercise their authority in certain situations, such as:
 
 * **Lack of Capacity (Section 8(2)(a)):** The attorney’s authority may be activated **only when it is determined** that the donor lacks the **capacity to make decisions** related to their property and financial affairs. This ensures that the attorney steps in only when necessary, such as in cases where the donor cannot manage their own financial matters due to incapacity.
 * **Other Specified Circumstances (Section 8(2)(b)):** Alternatively, the power of attorney may specify other **circumstances** under which the attorney’s authority can be exercised, depending on the provisions set by the donor.
 
-3. Who Can Determine the Donor’s Capacity (Section 8(3))**
+**3. Who Can Determine the Donor’s Capacity (Section 8(3))\*\***
 
 For the attorney’s authority to be activated based on incapacity, there needs to be a determination that the donor **lacks capacity**. This can be made by:
 
@@ -31,7 +31,7 @@ For the attorney’s authority to be activated based on incapacity, there needs 
 
 The donor has the **flexibility to designate** any person they trust to make the determination of their capacity, including the attorney themselves. This provides the donor with control over who can decide when they are no longer capable of managing their affairs.
 
-#**5. Revocation of Attorney’s Authority (Section 8(5))**
+**5. Revocation of Attorney’s Authority (Section 8(5))**
 
 Once the power of attorney is activated due to the donor’s incapacity, the attorney’s authority can be **revoked** if:
 
