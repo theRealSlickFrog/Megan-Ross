@@ -6,7 +6,6 @@ thumbnail: /images/blog/resignation.avif
 ---
 Note: this article provides legal information, not legal advice. Reading this article should not be construed as obtaining legal advice from Ross Estate Law.
 
-
 In Nova Scotia the Power of Attorney Act, section 10 outlines the process for an attorney to **resign** from their duties under a power of attorney. The procedure varies depending on whether the **donor** (the person who granted the power of attorney) is capable of understanding the resignation notice and its consequences. The section ensures that the resignation process is done in a way that maintains clarity and accountability, especially when the donor lacks capacity.
 
 ### **1. Resignation When Donor Is Capable (Section 10(a))**
