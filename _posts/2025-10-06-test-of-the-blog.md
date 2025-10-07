@@ -1,7 +1,6 @@
 ---
 layout: blog
-title: Eligibility and Restrictions for Acting as an Attorney (Power of
-  Attorney) in Nova Scotia
+title: Eligibility and Restrictions for Acting as a Power of Attorney
 date: 2025-10-06T14:10:00.000-03:00
 thumbnail: /images/blog/eligibility-.avif
 ---
