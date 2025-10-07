@@ -485,9 +485,25 @@
 				.map(para => para.trim())
 				.filter(para => para.length > 0)
 				.map(para => {
+					// First escape HTML to prevent XSS
+					let formatted = escapeHtml(para);
+
+					// Then apply markdown formatting (after escaping)
+					// Bold: **text** or __text__
+					formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+					formatted = formatted.replace(/__(.+?)__/g, '<strong>$1</strong>');
+
+					// Italic: *text* or _text_
+					formatted = formatted.replace(/\*(.+?)\*/g, '<em>$1</em>');
+					formatted = formatted.replace(/_(.+?)_/g, '<em>$1</em>');
+
+					// Links: [text](url)
+					formatted = formatted.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+
 					// Replace single line breaks with <br>
-					const formatted = para.replace(/\n/g, '<br>');
-					return `<p>${escapeHtml(formatted)}</p>`;
+					formatted = formatted.replace(/\n/g, '<br>');
+
+					return `<p>${formatted}</p>`;
 				})
 				.join('');
 		}
