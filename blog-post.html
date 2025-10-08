@@ -323,10 +323,51 @@
 			color: #b6834f;
 		}
 
+		/* Hamburger Menu Styles */
+		.hamburger {
+			display: none;
+		}
+
 		/* Mobile Responsive Styles */
 		@media (max-width: 768px) {
 			body {
 				min-width: 0;
+			}
+
+			/* Hamburger Menu */
+			.hamburger {
+				display: block;
+				position: absolute;
+				top: 15px;
+				right: 20px;
+				background: none;
+				border: none;
+				cursor: pointer;
+				padding: 10px;
+				z-index: 1000;
+				width: 44px;
+				height: 44px;
+			}
+
+			.hamburger-line {
+				display: block;
+				width: 25px;
+				height: 3px;
+				background-color: #666666;
+				margin: 5px 0;
+				transition: 0.3s;
+			}
+
+			.hamburger.active .hamburger-line:nth-child(1) {
+				transform: rotate(-45deg) translate(-5px, 6px);
+			}
+
+			.hamburger.active .hamburger-line:nth-child(2) {
+				opacity: 0;
+			}
+
+			.hamburger.active .hamburger-line:nth-child(3) {
+				transform: rotate(45deg) translate(-5px, -6px);
 			}
 
 			/* Header */
@@ -348,12 +389,54 @@
 				width: 100%;
 			}
 
+			#navigation div ul {
+				display: none;
+				position: absolute;
+				top: 54px;
+				left: 0;
+				width: 100%;
+				background: #f5f5f5;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+				padding: 0;
+				margin: 0;
+			}
+
+			#navigation div ul.mobile-active {
+				display: block;
+			}
+
 			#navigation div ul li {
 				width: 100%;
+				float: none;
 			}
 
 			#navigation div ul li a {
 				font-size: 20px !important;
+				padding: 15px 20px !important;
+				display: block;
+				border-bottom: 1px solid #ddd;
+				min-height: 44px;
+				text-align: left;
+			}
+
+			.dropdown-content {
+				position: static !important;
+				box-shadow: none !important;
+				width: 100% !important;
+				background: #efefef !important;
+				border-radius: 0 !important;
+				left: 0 !important;
+			}
+
+			.dropdown-content.services-dropdown {
+				width: 100% !important;
+				left: 0 !important;
+			}
+
+			.dropdown-content a {
+				padding: 12px 40px !important;
+				font-size: 18px !important;
+				border-bottom: 1px solid #ddd !important;
 			}
 
 			/* Body */
