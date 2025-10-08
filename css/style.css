@@ -743,9 +743,14 @@ p a:hover {
 		height: 150px;
 	}
 
+	#header div {
+		width: 100%;
+	}
+
 	#header div a.logo {
 		height: 150px;
 		background-size: contain;
+		background-position: center top;
 	}
 
 	/* Navigation */
@@ -843,6 +848,14 @@ p a:hover {
 	#body div#background div p {
 		font-size: 16px;
 		line-height: 24px;
+	}
+
+	/* Fix background image section on mobile */
+	#body div#image-section {
+		background-attachment: scroll;
+		background-size: cover;
+		height: 50vh;
+		min-height: 300px;
 	}
 
 	/* Content sections */
@@ -958,6 +971,8 @@ p a:hover {
 	.cta-section {
 		margin: 30px 20px;
 		padding: 30px 20px;
+		max-width: calc(100% - 40px);
+		box-sizing: border-box;
 	}
 
 	.cta-section h3 {
@@ -969,15 +984,22 @@ p a:hover {
 	}
 
 	.cta-buttons {
+		display: flex;
 		flex-direction: column;
+		gap: 10px;
+		width: 100%;
 	}
 
 	.cta-primary,
 	.cta-secondary {
 		display: block;
 		width: 100%;
-		margin: 10px 0;
+		margin: 0;
+		padding: 15px 20px;
 		text-align: center;
+		box-sizing: border-box;
+		white-space: normal;
+		word-wrap: break-word;
 	}
 
 	.services-description {
