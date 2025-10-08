@@ -850,6 +850,28 @@ p a:hover {
 		line-height: 24px;
 	}
 
+	/* About section - fix text overflow */
+	#body div#background div div.about {
+		width: 100%;
+		padding: 0 20px;
+		box-sizing: border-box;
+		float: none;
+	}
+
+	#body div#background div div.about h3 {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	#body div#background div div.about h4 {
+		font-size: 18px;
+	}
+
+	#body div#background div div.about p {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
 	/* Hide background image section on mobile */
 	#body div#image-section {
 		display: none;
