@@ -412,6 +412,77 @@
 
 		/* Responsive */
 		@media (max-width: 768px) {
+			body {
+				min-width: 0;
+			}
+
+			/* Header */
+			#header {
+				height: 150px;
+			}
+
+			#header div a.logo {
+				height: 150px;
+				background-size: contain;
+			}
+
+			/* Navigation - use same mobile styles as main site */
+			#navigation {
+				height: auto;
+			}
+
+			#navigation div {
+				width: 100%;
+			}
+
+			#navigation div ul li {
+				width: 100%;
+			}
+
+			#navigation div ul li a {
+				font-size: 20px !important;
+			}
+
+			/* Blog background section */
+			#background {
+				min-height: 250px;
+				padding: 40px 0 20px;
+			}
+
+			#background > div {
+				padding: 40px 20px 100px;
+			}
+
+			#background h1 {
+				font-size: 36px;
+				line-height: 42px;
+				letter-spacing: 1px;
+			}
+
+			#background p {
+				font-size: 16px;
+				line-height: 24px;
+			}
+
+			/* Content section */
+			#content-section {
+				margin-top: -10vh;
+			}
+
+			.blog-header {
+				padding: 40px 20px 30px;
+				width: calc(100% - 40px);
+			}
+
+			.blog-header h2 {
+				font-size: 32px;
+			}
+
+			/* Blog posts */
+			#blog-posts {
+				padding: 0 10px;
+			}
+
 			.blog-post-preview {
 				flex-direction: column;
 				padding: 15px;
@@ -423,18 +494,75 @@
 			}
 
 			.blog-post-preview h3 {
-				font-size: 28px;
+				font-size: 24px;
 			}
 
 			.blog-post-preview .excerpt {
-				font-size: 18px;
+				font-size: 16px;
 			}
 
 			.blog-post-preview .date {
 				font-size: 14px;
 			}
+
+			/* Contact banner */
+			.contact-banner {
+				padding: 30px 0;
+			}
+
+			.contact-details {
+				flex-direction: column;
+				gap: 20px;
+			}
+
+			.contact-info h2 {
+				font-size: 28px;
+			}
+
+			/* Footer */
+			#footer {
+				width: 100%;
+				padding: 20px;
+			}
+
+			#footer ul {
+				width: 100%;
+				padding: 20px 0;
+			}
+		}
+
+		@media (max-width: 480px) {
+			#header {
+				height: 120px;
+			}
+
+			#header div a.logo {
+				height: 120px;
+			}
+
+			#background h1 {
+				font-size: 28px;
+				line-height: 34px;
+			}
+
+			.blog-header h2 {
+				font-size: 28px;
+			}
+
+			.blog-post-preview h3 {
+				font-size: 20px;
+			}
+
+			.blog-post-preview .excerpt {
+				font-size: 14px;
+			}
+
+			.contact-info h2 {
+				font-size: 24px;
+			}
 		}
 	</style>
+	<script src="js/mobile-nav.js"></script>
 </head>
 <body>
 	<div id="header">
