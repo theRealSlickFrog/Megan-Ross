@@ -850,12 +850,9 @@ p a:hover {
 		line-height: 24px;
 	}
 
-	/* Fix background image section on mobile */
+	/* Hide background image section on mobile */
 	#body div#image-section {
-		background-attachment: scroll;
-		background-size: cover;
-		height: 50vh;
-		min-height: 300px;
+		display: none;
 	}
 
 	/* Content sections */
