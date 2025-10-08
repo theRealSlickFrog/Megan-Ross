@@ -410,8 +410,45 @@
 			color: #b6834f;
 		}
 
-		/* Responsive */
+		/* Hamburger Menu (Mobile) */
+		.hamburger {
+			display: none;
+		}
+
 		@media (max-width: 768px) {
+			.hamburger {
+				display: block;
+				position: absolute;
+				top: 15px;
+				right: 20px;
+				background: none;
+				border: none;
+				cursor: pointer;
+				padding: 10px;
+				z-index: 1001;
+			}
+
+			.hamburger-line {
+				display: block;
+				width: 25px;
+				height: 3px;
+				background: #666666;
+				margin: 5px 0;
+				transition: all 0.3s ease;
+			}
+
+			.hamburger.active .hamburger-line:nth-child(1) {
+				transform: rotate(45deg) translate(7px, 7px);
+			}
+
+			.hamburger.active .hamburger-line:nth-child(2) {
+				opacity: 0;
+			}
+
+			.hamburger.active .hamburger-line:nth-child(3) {
+				transform: rotate(-45deg) translate(7px, -7px);
+			}
+
 			body {
 				min-width: 0;
 			}
@@ -426,21 +463,69 @@
 				background-size: contain;
 			}
 
-			/* Navigation - use same mobile styles as main site */
+			/* Navigation - mobile hamburger menu */
 			#navigation {
 				height: auto;
 			}
 
 			#navigation div {
 				width: 100%;
+				position: relative;
+			}
+
+			#navigation div ul {
+				display: none;
+				position: absolute;
+				top: 54px;
+				left: 0;
+				right: 0;
+				background: #f5f5f5;
+				box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+				padding: 0;
+				z-index: 1000;
+			}
+
+			#navigation div ul.mobile-active {
+				display: block;
 			}
 
 			#navigation div ul li {
+				float: none;
 				width: 100%;
+				border-bottom: 1px solid #ddd;
 			}
 
 			#navigation div ul li a {
-				font-size: 20px !important;
+				display: block;
+				padding: 15px 20px !important;
+				font-size: 18px !important;
+				text-align: left;
+				height: auto;
+				line-height: normal;
+			}
+
+			#navigation div ul li.current a,
+			#navigation div ul li a:hover {
+				background: #e0e0e0 !important;
+			}
+
+			/* Dropdowns on mobile */
+			.dropdown-content {
+				position: static !important;
+				display: none;
+				width: 100% !important;
+				box-shadow: none;
+				background: #e8e8e8 !important;
+				padding-left: 20px;
+			}
+
+			.dropdown.active .dropdown-content {
+				display: block !important;
+			}
+
+			.dropdown-content a {
+				font-size: 16px !important;
+				padding: 12px 20px !important;
 			}
 
 			/* Blog background section */
