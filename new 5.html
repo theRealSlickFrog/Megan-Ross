@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Process - Ross Estate Law</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      width: 170px !important;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 9999;
+      top: 54px;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    .dropdown-content.services-dropdown {
+      width: 240px !important;
+      left: 20px !important;
+    }
+
+    .dropdown-content a {
+      color: #333333 !important;
+      padding: 8px 12px !important;
+      text-decoration: none !important;
+      display: block !important;
+      font-size: 20px !important;
+      font-weight: normal !important;
+      text-transform: none !important;
+      text-shadow: none !important;
+      background: none !important;
+      line-height: normal !important;
+      height: auto !important;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1 !important;
+      color: #333333 !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Background styling */
+    #body {
+      background: #ffffff !important;
+    }
+
+    #background {
+      background: #ffffff !important;
+      padding: 40px 0 0 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    #section {
+      background: #ffffff !important;
+      padding: 0 0 40px 0 !important;
+      margin-top: 0 !important;
+    }
+
+    .about {
+      max-width: 1600px !important;
+      width: 100% !important;
+      margin: 0 auto;
+      padding: 40px 50px 0 50px;
+    }
+
+    .about h3 {
+      font-size: 56px !important;
+      color: #333333 !important;
+      line-height: 1.3 !important;
+      margin: 0 0 20px 0;
+    }
+
+    .about p {
+      font-size: 20px !important;
+      line-height: 1.6;
+      color: #333333 !important;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .process-steps {
+      width: 100%;
+      margin: 0 !important;
+      padding: 30px 0 60px 0 !important;
+      position: relative;
+    }
+
+    .step-item {
+      display: flex;
+      margin-bottom: 100px;
+      margin-top: 0;
+      opacity: 0;
+      position: relative;
+      transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .step-item:first-child {
+      margin-top: 0;
+    }
+
+    .step-item:nth-child(odd) {
+      justify-content: flex-end;
+      width: 50%;
+      margin-left: 0;
+      transform: translateX(100vw);
+    }
+
+    .step-item:nth-child(even) {
+      justify-content: flex-start;
+      width: 50%;
+      margin-left: 50%;
+      transform: translateX(-100vw);
+    }
+
+    .step-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .step-item::after {
+      content: '↓';
+      position: absolute;
+      font-size: 60px;
+      font-weight: bold;
+      opacity: 0;
+      transition: all 0.6s ease 0.8s;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -50px;
+    }
+
+    .step-item:nth-child(odd)::after {
+      color: #8ab4a8;
+    }
+
+    .step-item:nth-child(even)::after {
+      color: #d49c6a;
+    }
+
+    .step-item.visible::after {
+      opacity: 0.6;
+      bottom: -40px;
+    }
+
+    .step-item:last-child::after {
+      display: none;
+    }
+
+    .step-number {
+      color: #333333;
+      width: 500px;
+      min-height: 180px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
+      padding: 35px 40px;
+      position: relative;
+      border: 4px solid transparent;
+    }
+
+    .step-number::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 20px;
+      border: 4px solid;
+      opacity: 0;
+      transition: opacity 0.3s ease 1s;
+    }
+
+    .step-item:nth-child(odd) .step-number {
+      background: linear-gradient(135deg, #8ab4a8 0%, #a8c9c0 100%);
+      margin: 0;
+    }
+
+    .step-item:nth-child(odd) .step-number::before {
+      border-color: #6b9d8f;
+      background: linear-gradient(90deg, 
+        #6b9d8f 0%, 
+        #6b9d8f 25%, 
+        transparent 25%, 
+        transparent 100%);
+      background-size: 400% 100%;
+      background-position: 100% 0;
+    }
+
+    .step-item:nth-child(even) .step-number {
+      background: linear-gradient(135deg, #e8a89a 0%, #f4c4b8 100%);
+      margin: 0;
+    }
+
+    .step-item:nth-child(even) .step-number::before {
+      border-color: #d49c6a;
+      background: linear-gradient(90deg, 
+        #d49c6a 0%, 
+        #d49c6a 25%, 
+        transparent 25%, 
+        transparent 100%);
+      background-size: 400% 100%;
+      background-position: 100% 0;
+    }
+
+    .step-item.visible .step-number::before {
+      opacity: 1;
+      animation: drawBorder 1.5s ease-in-out 1s forwards;
+    }
+
+    @keyframes drawBorder {
+      0% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      }
+      25% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+      50% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      75% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    @keyframes borderPulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
+    .step-item.visible .step-number::before {
+      animation: drawBorder 1.5s ease-in-out 1s forwards, borderPulse 2s ease-in-out 2.5s infinite;
+    }
+
+    .step-number span.step-digit {
+      font-size: 32px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .step-number h4 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: #2c2c2c;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .step-number p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #2c2c2c;
+      margin: 0;
+    }
+
+    .step-icon {
+      position: absolute;
+      right: 20px;
+      top: 30px;
+      font-size: 96px;
+      opacity: 0.6;
+    }
+
+    .step-item:nth-child(1) .step-icon,
+    .step-item:nth-child(2) .step-icon {
+      top: 0px;
+    }
+
+    .contact-banner {
+      background: #2c2c2c;
+      color: white;
+      padding: 40px 0;
+      width: 100%;
+    }
+
+    .contact-content {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .contact-info h2 {
+      color: white;
+      font-size: 36px;
+      margin: 0 0 30px 0;
+      text-align: center;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      text-align: center;
+    }
+
+    .contact-item span {
+      color: white;
+      display: block;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .contact-item .phone {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .contact-item .email {
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .contact-item .address {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <div>
+      <a href="index.html" class="logo">Ross Estate Law</a>
+    </div>
+  </div>
+
+  <div id="navigation">
+    <div>
+      <ul>
+        <li><a class="home" href="index.html">Home</a></li>
+        <li class="current dropdown">
+          <a class="about" href="about.html">About</a>
+          <div class="dropdown-content">
+            <a href="about.html">Dr. Megan Ross</a>
+            <a href="our-process.html">Our Process</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a class="services" href="estate-planning.html">Services</a>
+          <div class="dropdown-content services-dropdown">
+            <a href="estate-planning.html">Estate Planning</a>
+            <a href="young-families.html">Estate Planning for Young Families</a>
+            <a href="probate-services.html">Executor and Probate Services</a>
+            <a href="legal-transition.html">Legal Transition Services</a>
+          </div>
+        </li>
+        <li><a class="blog" href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="body">
+    <div id="background">
+      <div class="about">
+        <h3>Our Estate<br>Planning Process</h3>
+        <p>
+          We've designed a clear, step-by-step process that takes the uncertainty out of estate planning.
+          From your first appointment to ongoing support, we guide you through each stage with transparency and care.
+          Our goal is to make estate planning approachable and stress-free, ensuring your wishes are documented clearly
+          and your loved ones are protected. Every client receives personalized attention and expert guidance throughout
+          the entire process.
+        </p>
+      </div>
+    </div>
+
+    <div id="section">
+      <div class="process-steps">
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">🎯</span>
+            <span class="step-digit">STEP 1</span>
+            <h4>BOOK APPOINTMENT ONLINE</h4>
+            <p>We will send you an email with a list of matters to consider before our first meeting.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">🗺️</span>
+            <span class="step-digit">STEP 2</span>
+            <h4>PLANNING MEETING</h4>
+            <p>At our planning meeting we will make a plan for your estate, discuss next steps and book a signing.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">💡</span>
+            <span class="step-digit">STEP 3</span>
+            <h4>DRAFT REVIEW</h4>
+            <p>Ross Estate Law will send a draft of your documents one week prior to the signing appointment. If you want to discuss them, you can book a call the week before signing.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">✍️</span>
+            <span class="step-digit">STEP 4</span>
+            <h4>SIGNING</h4>
+            <p>At our second meeting all documents will be finalized and signed. Payment is due at this meeting.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">🔒</span>
+            <span class="step-digit">STEP 5</span>
+            <h4>STORAGE</h4>
+            <p>Ross Estate Law can store your will in a secure underground vault, in a guarded off-site storage unit. There is no additional fee for this service.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">✏️</span>
+            <span class="step-digit">STEP 6</span>
+            <h4>REVISIONS</h4>
+            <p>Every five years Ross Estate Law will contact you to see if you would like to update any of your documents. Clients with Ross Estate Law have a 50% discount on revisions to estate documents drafted by our offices.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-banner">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Ross Estate Law</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="phone">(902) 403-0008</span>
+          </div>
+          <div class="contact-item">
+            <span class="email">megan@rossestatelaw.ca</span>
+          </div>
+          <div class="contact-item">
+            <span class="address">99 Wyse Road, Suite 1100<br>Dartmouth, Nova Scotia<br>B3A 4S5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const stepItems = document.querySelectorAll(".step-item");
+
+      function checkVisibility() {
+        stepItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          
+          // Check if element is in viewport
+          if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0) {
+            item.classList.add("visible");
+          }
+        });
+      }
+
+      // Check on scroll
+      window.addEventListener('scroll', checkVisibility);
+      
+      // Check on load
+      checkVisibility();
+      
+      // Also check after a delay (for artifact preview)
+      setTimeout(checkVisibility, 100);
+    });
+  </script>
+
+</body>
+</html>
