@@ -22,3 +22,5 @@ Thumbs.db
 
 # Claude files (optional - remove if you want to track them)
 .claude/
+# Local Netlify folder
+.netlify

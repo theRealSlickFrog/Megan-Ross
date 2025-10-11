@@ -614,56 +614,55 @@ p a:hover {
 	display: inline;
 	padding: 0 5px;
 }
+/* === Footer Layout Fix === */
 #footer {
+	background: #0b080c;
+	color: #ccc;
 	margin: 0 auto;
-	min-height: 85px;
-	overflow: hidden;
-	width: 940px;
-}
-#footer div.logo {
-	float: left;
-	padding: 27px 0 0;
-	width: 220px;
-}
-#footer div.logo a img {
-	display: block;
-}
-#footer ul {
-	float: left;
-	list-style: none;
-	margin: 3px 0 0;
-	overflow: hidden;
-	padding: 33px 0 0;
-	width: 220px;
-}
-#footer ul li {
-	border-left: 1px solid #85603a;
-	float: left;
-	height: 10px; 
-}
-#footer ul li:first-child {
-	border: 0;
-}
-#footer ul li a {
-	color: #85603a;
-	display: block;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	line-height: 9px;
-	padding: 0 5px;
+	padding: 30px 0;
+	width: 100%;
 	text-align: center;
+	overflow: hidden;
+	min-height: 120px;
+	height: auto;
+}
+
+#footer ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 8px 0;
+	display: inline-flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: auto;
+}
+
+#footer ul li {
+	border: none;
+	float: none;
+	display: inline;
+	height: auto;
+}
+
+#footer ul li a {
+	color: #aaa;
+	font-size: 20px;
+	line-height: normal;
+	height: auto;
+	padding: 0 4px;
 	text-decoration: none;
+	font-family: 'QuestrialRegular', Arial, sans-serif;
 }
+
+#footer ul li a:hover {
+	color: #eeb58c;
+}
+
 #footer p {
-	color: #85603a;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	float: left;
-	line-height: 16px;
-	margin: 0;
-	padding: 33px 0 0;
-	width: 280px;
+	display: none; /* hides redundant small-text copyright if any */
 }
+
 #footer div#connect {
 	float: right;
 	overflow: hidden;
