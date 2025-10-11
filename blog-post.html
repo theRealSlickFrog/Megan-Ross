@@ -285,24 +285,30 @@
 
 		#footer {
 			margin: 0 auto;
-			min-height: 85px;
+			min-height: 120px;
+			height: auto;
 			overflow: hidden;
-			width: 940px;
+			width: 100%;
+			text-align: center;
+			padding: 30px 0;
 		}
 
 		#footer ul {
-			float: left;
 			list-style: none;
-			margin: 3px 0 0;
-			padding: 33px 0 0;
-			overflow: hidden;
-			width: 220px;
+			margin: 0 auto;
+			padding: 8px 0;
+			display: inline-flex;
+			gap: 10px;
+			flex-wrap: wrap;
+			justify-content: center;
+			width: auto;
 		}
 
 		#footer ul li {
-			border-left: 1px solid #85603a;
-			float: left;
-			height: 10px;
+			border: none;
+			float: none;
+			display: inline;
+			height: auto;
 		}
 
 		#footer ul li:first-child {
@@ -310,18 +316,19 @@
 		}
 
 		#footer ul li a {
-			color: #85603a;
-			display: block;
-			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-			font-size: 10px;
-			line-height: 9px;
-			padding: 0 5px;
+			color: #aaa;
+			display: inline;
+			font-family: 'QuestrialRegular', Arial, sans-serif;
+			font-size: 20px;
+			line-height: normal;
+			height: auto;
+			padding: 0 4px;
 			text-align: center;
 			text-decoration: none;
 		}
 
 		#footer ul li a:hover {
-			color: #b6834f;
+			color: #eeb58c;
 		}
 
 		/* Hamburger Menu Styles */
@@ -571,7 +578,7 @@
 				<li>
 					<a class="home" href="index.html">Home</a>
 				</li>
-				<li class="dropdown">
+				<li class="current dropdown">
 					<a class="about" href="about.html">About</a>
 					<div class="dropdown-content">
 						<a href="about.html">Dr. Megan Ross</a>
@@ -588,7 +595,7 @@
 						<a href="legal-transition.html">Legal Transition Services</a>
 					</div>
 				</li>
-				<li class="current">
+				<li>
 					<a class="contact" href="contact-us.html">Contact</a>
 				</li>
 			</ul>
