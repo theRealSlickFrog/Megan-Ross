@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Message Sent - Ross Estate Law</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="header">
+		<div>
+			<a href="index.html" class="logo">Ross Estate Law</a>
+		</div>
+	</div>
+	<div id="navigation">
+		<div>
+			<ul>
+				<li>
+					<a class="home" href="index.html">Home</a>
+				</li>
+				<li class="dropdown">
+					<a class="about" href="about.html">About</a>
+					<div class="dropdown-content">
+						<a href="about.html">Dr. Megan Ross</a>
+						<a href="our-process.html">Our Process</a>
+						<a href="blog.html">Blog</a>
+					</div>
+				</li>
+				<li class="dropdown">
+					<a class="services" href="estate-planning.html">Services</a>
+					<div class="dropdown-content services-dropdown">
+						<a href="estate-planning.html">Estate Planning</a>
+						<a href="young-families.html">Estate Planning for Young Families</a>
+						<a href="probate-services.html">Executor and Probate Services</a>
+						<a href="legal-transition.html">Group Estate Planning Workshops</a>
+					</div>
+				</li>
+				<li>
+					<a class="contact" href="contact-us.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="body">
+		<div id="background">
+			<div>
+				<div class="success-content">
+					<h1>Thank You!</h1>
+					<p class="success-message">Your message has been successfully sent.</p>
+					<p>We appreciate you reaching out to Ross Estate Law. We'll review your message and get back to you within 24 hours.</p>
+					<p>If you need immediate assistance, please call us at <a href="tel:9024030008">(902) 403-0008</a>.</p>
+					<div class="success-actions">
+						<a href="index.html" class="btn-primary">Return to Home</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contact-banner">
+		<div class="contact-content">
+			<div class="contact-info">
+				<h2>Ross Estate Law</h2>
+				<div class="contact-details">
+					<div class="contact-item">
+						<span class="phone">(902) 403-0008</span>
+					</div>
+					<div class="contact-item">
+						<span class="email">megan@rossestatelaw.ca</span>
+					</div>
+					<div class="contact-item">
+						<span class="address">99 Wyse Road, Suite 1100<br>Dartmouth, Nova Scotia<br>B3A 4S5</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<ul>
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="about.html">About</a>
+			</li>
+			<li>
+				<a href="estate-planning.html">Services</a>
+			</li>
+			<li>
+				<a href="blog.html">Blog</a>
+			</li>
+			<li>
+				<a href="legal.html">Privacy & Legal</a>
+			</li>
+		</ul>
+	</div>
+	<style>
+		/* Navigation menu styling */
+		#navigation div ul li a {
+			font-size: 28px !important;
+		}
+
+		/* Dropdown Menu Styles */
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #ffffff;
+			width: 170px !important;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 9999;
+			top: 54px;
+			left: 0;
+			border-radius: 5px;
+		}
+
+		.dropdown-content.services-dropdown {
+			width: 240px !important;
+			left: 20px !important;
+		}
+
+		.dropdown-content a {
+			color: #333333 !important;
+			padding: 8px 12px !important;
+			text-decoration: none !important;
+			display: block !important;
+			font-size: 20px !important;
+			font-weight: normal !important;
+			text-transform: none !important;
+			text-shadow: none !important;
+			background: none !important;
+			line-height: normal !important;
+			height: auto !important;
+		}
+
+		.dropdown-content a:hover {
+			background-color: #f1f1f1 !important;
+			color: #333333 !important;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		/* Success page styling */
+		#background {
+			background: #ffffff !important;
+			padding: 60px 0;
+			min-height: 500px;
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 !important;
+			float: none !important;
+		}
+
+		#background > div {
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 auto !important;
+		}
+
+		.success-content {
+			max-width: 800px;
+			margin: 0 auto !important;
+			padding: 60px 40px;
+			text-align: center;
+			background: #f5f5f5;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+		}
+
+		.success-content h1 {
+			color: #333;
+			font-size: 48px;
+			margin: 0 0 20px 0;
+		}
+
+		.success-message {
+			color: #8ab4a8;
+			font-size: 24px;
+			font-weight: bold;
+			margin: 0 0 30px 0;
+		}
+
+		.success-content p {
+			color: #555;
+			font-size: 18px;
+			line-height: 1.6;
+			margin: 0 0 20px 0;
+		}
+
+		.success-content p a {
+			color: #333;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		.success-content p a:hover {
+			color: #8ab4a8;
+		}
+
+		.success-actions {
+			margin-top: 40px;
+			display: flex;
+			gap: 20px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.btn-primary {
+			display: inline-block;
+			background: #333;
+			color: #ffffff;
+			padding: 15px 30px;
+			text-decoration: none;
+			border-radius: 5px;
+			font-size: 18px;
+			font-weight: bold;
+			transition: background 0.2s ease;
+		}
+
+		.btn-primary:hover {
+			background: #555;
+		}
+
+		.btn-secondary {
+			display: inline-block;
+			background: transparent;
+			color: #333;
+			border: 2px solid #333;
+			padding: 13px 30px;
+			text-decoration: none;
+			border-radius: 5px;
+			font-size: 18px;
+			font-weight: bold;
+			transition: all 0.2s ease;
+		}
+
+		.btn-secondary:hover {
+			background: #333;
+			color: #ffffff;
+		}
+	</style>
+
+	<script src="js/mobile-nav.js"></script>
+</body>
+</html>
