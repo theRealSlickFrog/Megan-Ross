@@ -1,4 +1,7 @@
 /* Website template by freewebsitetemplates.com */
+html {
+	scroll-behavior: smooth;
+}
 body {
 	background: #0b080c;
 	color: #ffffff;
