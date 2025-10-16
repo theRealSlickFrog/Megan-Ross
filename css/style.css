@@ -99,6 +99,9 @@ img {
 #navigation div ul li a.services {
 	padding: 0 28px 0 120px;
 }
+#navigation div ul li a.resources {
+	padding: 0 28px 0 180px;
+}
 #navigation div ul li a.blog {
 	padding: 0 28px 0 140px;
 }
@@ -129,6 +132,11 @@ img {
 	left: 20px !important;
 }
 
+.dropdown-content.resources-dropdown {
+	width: 170px !important;
+	left: 180px !important;
+}
+
 .dropdown-content a {
 	color: #333333 !important;
 	padding: 8px 12px !important;
@@ -157,14 +165,14 @@ img {
 }
 #body div#background {
 	background: #FFFFFF url(../images/bg-content.jpg) no-repeat center bottom;
-	min-height: 420px;
+	min-height: 600px;
 	padding: 0;
 	width: auto;
 }
 #body div#background div {
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 80px 0 200px;
+	padding: 80px 0 350px;
 	width: 940px;
 }
 #body div#background div div {
