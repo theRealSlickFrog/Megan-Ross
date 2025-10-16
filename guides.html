@@ -3,7 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Estate Planning Guides - Ross Estate Law</title>
+	<title>Estate Planning Guides & Resources - Ross Estate Law</title>
+	<meta name="description" content="Download free estate planning guides and checklists. Access will and probate resources, and learn about upcoming estate planning events in Halifax, Nova Scotia.">
+	<meta name="keywords" content="estate planning guides, will checklist, probate checklist, estate planning resources, Halifax estate planning, Nova Scotia wills">
+	<meta property="og:title" content="Estate Planning Guides & Resources - Ross Estate Law">
+	<meta property="og:description" content="Download free estate planning guides and checklists. Access will and probate resources, and learn about upcoming estate planning events in Halifax, Nova Scotia.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.rossestatelaw.ca/guides.html">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/cookie-consent.css">
 	<!-- Google tag (gtag.js) -->
@@ -55,7 +61,7 @@
 				</li>
 				<li class="current dropdown">
 					<a class="resources" href="guides.html">Resources</a>
-					<div class="dropdown-content">
+					<div class="dropdown-content resources-dropdown">
 						<a href="guides.html">Guides</a>
 						<a href="blog.html">Blog</a>
 					</div>
@@ -162,6 +168,11 @@
 		.dropdown-content.services-dropdown {
 			width: 240px !important;
 			left: 20px !important;
+		}
+
+		.dropdown-content.resources-dropdown {
+			width: 170px !important;
+			left: 180px !important;
 		}
 
 		.dropdown-content a {
@@ -277,11 +288,51 @@
 			margin: 0;
 		}
 
-		/* Responsive */
+		/* Tablet Responsive */
+		@media (max-width: 1024px) {
+			.guides-container {
+				padding: 0 30px;
+			}
+
+			.section-title {
+				font-size: 22px;
+			}
+		}
+
+		/* Mobile Responsive */
 		@media (max-width: 768px) {
+			.guides-container {
+				padding: 0 20px;
+			}
+
+			.section {
+				margin-bottom: 40px;
+			}
+
+			.section-title {
+				font-size: 20px;
+				padding-bottom: 8px;
+				border-bottom: 2px solid #000;
+			}
+
 			.documents-grid {
 				flex-direction: column;
 				gap: 30px;
+				align-items: center;
+			}
+
+			.document-item {
+				width: 100%;
+				max-width: 200px;
+			}
+
+			.pdf-icon {
+				width: 70px;
+				height: 70px;
+			}
+
+			.document-item h3 {
+				font-size: 16px;
 			}
 
 			.event-item {
@@ -291,6 +342,48 @@
 			.event-image {
 				width: 100%;
 				max-width: 300px;
+			}
+
+			.event-details h3 {
+				font-size: 20px;
+			}
+
+			.event-date,
+			.event-location {
+				font-size: 16px;
+			}
+
+			#background {
+				padding: 20px 0 40px 0;
+			}
+		}
+
+		/* Small Mobile */
+		@media (max-width: 480px) {
+			.guides-container {
+				padding: 0 15px;
+			}
+
+			.section-title {
+				font-size: 18px;
+			}
+
+			.document-item h3 {
+				font-size: 14px;
+			}
+
+			.pdf-icon {
+				width: 60px;
+				height: 60px;
+			}
+
+			.event-details h3 {
+				font-size: 18px;
+			}
+
+			.event-date,
+			.event-location {
+				font-size: 14px;
 			}
 		}
 	</style>
