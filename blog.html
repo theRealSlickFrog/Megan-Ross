@@ -749,9 +749,12 @@
 					const firstSentence = getFirstSentence(post.body);
 					const slug = post.slug || createSlug(post.title);
 
+					// Debug: Log thumbnail info
+					console.log('Post:', post.title, 'Thumbnail:', post.thumbnail);
+
 					return `
 						<a href="blog-post.html?post=${slug}" class="blog-post-preview">
-							${post.thumbnail ? `<img src="${post.thumbnail}" alt="${escapeHtml(post.title)}" class="thumbnail">` : ''}
+							${post.thumbnail ? `<img src="${post.thumbnail}" alt="${escapeHtml(post.title)}" class="thumbnail" onerror="console.error('Failed to load image:', this.src); this.style.display='none';">` : '<div style="width: 300px; height: 180px; background: #e0e0e0; border-radius: 12px; flex-shrink: 0;"></div>'}
 							<div class="post-info">
 								<h3>${escapeHtml(post.title)}</h3>
 								<div class="excerpt">${firstSentence}</div>
