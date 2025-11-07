@@ -10,6 +10,8 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
+
 @font-face {
 	font-family: 'QuestrialRegular';
 	src: url('../fonts/questrial-regular-webfont.eot');
@@ -43,14 +45,16 @@ img {
 	height: 306px;
 	text-indent: -99999px;
 }
+#nav-placeholder {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
 #navigation {
 	background: url(../images/bg-gray.png) repeat-x left top;
 	border-bottom: 1px solid #999999;
 	height: 54px;
-	position: sticky;
-	top: 0;
 	width: 100%;
-	z-index: 100;
 }
 #navigation div {
 	margin: 0 auto;
@@ -172,7 +176,7 @@ img {
 #body div#background div {
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 80px 0 350px;
+	padding: 80px 0 50px;
 	width: 940px;
 }
 #body div#background div div {
