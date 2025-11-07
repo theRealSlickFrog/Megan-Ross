@@ -53,6 +53,7 @@ img {
 }
 #navigation {
 	background: url(../images/bg-gray.png) repeat-x left top;
+	border-top: 1px solid #999999;
 	border-bottom: 1px solid #999999;
 	height: 54px;
 	width: 100%;
