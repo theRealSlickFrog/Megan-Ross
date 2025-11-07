@@ -40,17 +40,11 @@ img {
 	width: 940px;
 }
 #header div a.logo {
-	background: none;
+	background: url(../images/dogs.jpg) no-repeat center center;
+	background-size: contain;
 	display: block;
 	height: 306px;
-	text-indent: 0;
-	color: #ffffff;
-	font-size: 72px;
-	font-weight: bold;
-	line-height: 306px;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
+	text-indent: -99999px;
 }
 #nav-placeholder {
 	position: sticky;
