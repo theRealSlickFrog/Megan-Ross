@@ -24,3 +24,4 @@ Thumbs.db
 .claude/
 # Local Netlify folder
 .netlify
+node_modules
