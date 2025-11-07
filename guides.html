@@ -36,40 +36,7 @@
 			<a href="index.html" class="logo">Ross Estate Law</a>
 		</div>
 	</div>
-	<div id="navigation">
-		<div>
-			<ul>
-				<li>
-					<a class="home" href="index.html">Home</a>
-				</li>
-				<li class="dropdown">
-					<a class="about" href="about.html">About</a>
-					<div class="dropdown-content">
-						<a href="about.html">Dr. Megan Ross</a>
-						<a href="our-process.html">Our Process</a>
-						<a href="contact-us.html">Contact</a>
-					</div>
-				</li>
-				<li class="dropdown">
-					<a class="services" href="estate-planning.html">Services</a>
-					<div class="dropdown-content services-dropdown">
-						<a href="estate-planning.html">Estate Planning</a>
-						<a href="young-families.html">Estate Planning for Young Families</a>
-						<a href="probate-services.html">Executor and Probate Services</a>
-						<a href="legal-transition.html">Group Estate Planning Workshops</a>
-					</div>
-				</li>
-				<li class="current dropdown">
-					<a class="resources" href="guides.html">Resources</a>
-					<div class="dropdown-content resources-dropdown">
-						<a href="guides.html">Guides</a>
-						<a href="blog.html">Blog</a>
-					<a href="contact-us.html">Contact</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+	<div id="nav-placeholder"></div>
 	<div id="body">
 		<div id="background">
 			<div>
@@ -143,62 +110,6 @@
 		</ul>
 	</div>
 	<style>
-		/* Navigation menu styling */
-		#navigation div ul li a {
-			font-size: 28px !important;
-		}
-
-		/* Dropdown Menu Styles */
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
-
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #ffffff;
-			width: 170px !important;
-			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			z-index: 9999;
-			top: 54px;
-			left: 0;
-			border-radius: 5px;
-		}
-
-		.dropdown-content.services-dropdown {
-			width: 240px !important;
-			left: 20px !important;
-		}
-
-		.dropdown-content.resources-dropdown {
-			width: 170px !important;
-			left: 180px !important;
-		}
-
-		.dropdown-content a {
-			color: #333333 !important;
-			padding: 8px 12px !important;
-			text-decoration: none !important;
-			display: block !important;
-			font-size: 20px !important;
-			font-weight: normal !important;
-			text-transform: none !important;
-			text-shadow: none !important;
-			background: none !important;
-			line-height: normal !important;
-			height: auto !important;
-		}
-
-		.dropdown-content a:hover {
-			background-color: #f1f1f1 !important;
-			color: #333333 !important;
-		}
-
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
-
 		/* Page content styling */
 		#background {
 			background: #ffffff !important;
@@ -390,6 +301,7 @@
 	</style>
 
 	<script src="js/mobile-nav.js"></script>
+	<script src="js/load-navigation.js"></script>
 	<script src="js/cookie-consent.js"></script>
 </body>
 </html>
