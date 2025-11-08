@@ -40,6 +40,8 @@ img {
 	width: 940px;
 }
 #header div a.logo {
+	background: url(../images/dogs.jpg) no-repeat center center;
+	background-size: contain;
 	display: block;
 	height: 306px;
 	text-indent: -99999px;
