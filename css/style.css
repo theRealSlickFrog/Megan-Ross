@@ -77,7 +77,7 @@ img {
 #navigation div ul li.current a,
 #navigation div ul li.current a:hover,
 #navigation div ul li a:hover {
-	background: url(../images/menu-selected.png) no-repeat right 15px center;
+	background: url(../images/menu-selected.png) no-repeat right 5px center;
 	color: #424141;
 }
 #navigation div ul li.current a.about,
