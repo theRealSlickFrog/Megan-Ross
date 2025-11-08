@@ -80,10 +80,6 @@ img {
 	background: url(../images/menu-selected.png) no-repeat right 5px center;
 	color: #424141;
 }
-#navigation div ul li.current a.about,
-#navigation div ul li.current a.about:hover {
-	background-position: right 25px center;
-}
 #navigation div ul li a:hover {
 	background: none;
 }
