@@ -12,6 +12,7 @@
 				<a class="about" href="about.html">About</a>
 				<div class="dropdown-content">
 					<a href="about.html">Dr. Megan Ross</a>
+					<a href="process.html">Process</a>
 					<a href="our-process.html">Our Process</a>
 					<a href="contact-us.html">Contact</a>
 				</div>
@@ -54,6 +55,7 @@
     const pageMap = {
       'index.html': 'nav-home',
       'about.html': 'nav-about',
+      'process.html': 'nav-about',
       'our-process.html': 'nav-about',
       'contact-us.html': 'nav-about',
       'estate-planning.html': 'nav-services',
