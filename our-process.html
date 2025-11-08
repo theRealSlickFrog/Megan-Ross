@@ -33,6 +33,185 @@
   </div>
 
   <div id="nav-placeholder"></div>
+
+  <div id="body">
+    <div id="background">
+      <div class="about">
+        <h3>Our Estate<br>Planning Process</h3>
+        <p>
+          We've designed a clear, step-by-step process that takes the uncertainty out of estate planning.
+          From your first appointment to ongoing support, we guide you through each stage with transparency and care.
+          Our goal is to make estate planning approachable and stress-free, ensuring your wishes are documented clearly
+          and your loved ones are protected. Every client receives personalized attention and expert guidance throughout
+          the entire process.
+       </p>
+      </div>
+    </div>
+
+    <div id="section">
+      <div class="process-steps">
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">🎯</span>
+            <span class="step-digit">STEP 1</span>
+            <h4>BOOK APPOINTMENT ONLINE</h4>
+            <p>We will send you an email with a list of matters to consider before our first meeting.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">🗺️</span>
+            <span class="step-digit">STEP 2</span>
+            <h4>PLANNING MEETING</h4>
+            <p>At our planning meeting we will make a plan for your estate, discuss next steps and book a signing.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">💡</span>
+            <span class="step-digit">STEP 3</span>
+            <h4>DRAFT REVIEW</h4>
+            <p>Ross Estate Law will send a draft of your documents one week prior to the signing appointment. If you want to discuss them, you can book a call the week before signing.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">✍️</span>
+            <span class="step-digit">STEP 4</span>
+            <h4>SIGNING</h4>
+            <p>At our second meeting all documents will be finalized and signed. Payment is due at this meeting.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">🔒</span>
+            <span class="step-digit">STEP 5</span>
+            <h4>STORAGE</h4>
+            <p>Ross Estate Law can store your will in a secure underground vault, in a guarded off-site storage unit. There is no additional fee for this service.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">
+            <span class="step-icon">✏️</span>
+            <span class="step-digit">STEP 6</span>
+            <h4>REVISIONS</h4>
+            <p>Every five years Ross Estate Law will contact you to see if you would like to update any of your documents. Clients with Ross Estate Law have a 50% discount on revisions to estate documents drafted by our offices.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="content-section">
+    <div class="services-header">
+      <h2>SERVICES</h2>
+      <hr>
+      <div class="services-list">
+        <a href="estate-planning.html">Estate Planning</a>
+        <a href="young-families.html">Estate Planning<br>for Young Families</a>
+        <a href="probate-services.html">Executor and<br>Probate Services</a>
+        <a href="legal-transition.html">Group Estate Planning Workshops</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>Ready to Get Started?</h3>
+    <p>Let's discuss your family's unique needs and create a plan that gives you confidence in your decisions.</p>
+
+    <form name="contact" method="POST" netlify action="/success.html" class="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name *" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email *" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" placeholder="How can we help you? *" required></textarea>
+      </div>
+      <button type="submit" class="cta-submit">Send Message</button>
+      <p class="form-note">We'll get back to you within 24 hours</p>
+    </form>
+
+    <div class="cta-divider">
+      <span>Or contact us directly:</span>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="tel:9024030008" class="cta-primary">Call (902) 403-0008</a>
+      <a href="mailto:megan@rossestatelaw.ca" class="cta-secondary">Schedule Free Consultation</a>
+    </div>
+    <p class="cta-note">Free initial consultation • Flat fee services • No hidden costs</p>
+  </div>
+
+  <div class="contact-banner">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Ross Estate Law</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="phone">(902) 403-0008</span>
+          </div>
+          <div class="contact-item">
+            <span class="email">megan@rossestatelaw.ca</span>
+          </div>
+          <div class="contact-item">
+            <span class="address">99 Wyse Road, Suite 1100<br>Dartmouth, Nova Scotia<br>B3A 4S5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="estate-planning.html">Services</a></li>
+      <li><a href="contact-us.html">Contact</a></li>
+      <li><a href="legal.html">Privacy & Legal</a></li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const stepItems = document.querySelectorAll(".step-item");
+
+      function checkVisibility() {
+        stepItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          
+          // Check if element is in viewport
+          if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0) {
+            item.classList.add("visible");
+          }
+        });
+      }
+
+      // Check on scroll
+      window.addEventListener('scroll', checkVisibility);
+      
+      // Check on load
+      checkVisibility();
+      
+      // Also check after a delay (for artifact preview)
+      setTimeout(checkVisibility, 100);
+    });
+  </script>
+  <script src="js/load-navigation.js"></script>
+  <script src="js/mobile-nav.js"></script>
+<script src="js/cookie-consent.js"></script>
   <style>
     /* Background styling */
     #body {
@@ -563,184 +742,5 @@
       font-style: italic;
     }
   </style>
-
-  <div id="body">
-    <div id="background">
-      <div class="about">
-        <h3>Our Estate<br>Planning Process</h3>
-        <p>
-          We've designed a clear, step-by-step process that takes the uncertainty out of estate planning.
-          From your first appointment to ongoing support, we guide you through each stage with transparency and care.
-          Our goal is to make estate planning approachable and stress-free, ensuring your wishes are documented clearly
-          and your loved ones are protected. Every client receives personalized attention and expert guidance throughout
-          the entire process.
-       </p>
-      </div>
-    </div>
-
-    <div id="section">
-      <div class="process-steps">
-
-        <div class="step-item">
-          <div class="step-number">
-            <span class="step-icon">🎯</span>
-            <span class="step-digit">STEP 1</span>
-            <h4>BOOK APPOINTMENT ONLINE</h4>
-            <p>We will send you an email with a list of matters to consider before our first meeting.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-number">
-            <span class="step-icon">🗺️</span>
-            <span class="step-digit">STEP 2</span>
-            <h4>PLANNING MEETING</h4>
-            <p>At our planning meeting we will make a plan for your estate, discuss next steps and book a signing.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-number">
-            <span class="step-icon">💡</span>
-            <span class="step-digit">STEP 3</span>
-            <h4>DRAFT REVIEW</h4>
-            <p>Ross Estate Law will send a draft of your documents one week prior to the signing appointment. If you want to discuss them, you can book a call the week before signing.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-number">
-            <span class="step-icon">✍️</span>
-            <span class="step-digit">STEP 4</span>
-            <h4>SIGNING</h4>
-            <p>At our second meeting all documents will be finalized and signed. Payment is due at this meeting.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-number">
-            <span class="step-icon">🔒</span>
-            <span class="step-digit">STEP 5</span>
-            <h4>STORAGE</h4>
-            <p>Ross Estate Law can store your will in a secure underground vault, in a guarded off-site storage unit. There is no additional fee for this service.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-number">
-            <span class="step-icon">✏️</span>
-            <span class="step-digit">STEP 6</span>
-            <h4>REVISIONS</h4>
-            <p>Every five years Ross Estate Law will contact you to see if you would like to update any of your documents. Clients with Ross Estate Law have a 50% discount on revisions to estate documents drafted by our offices.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div id="content-section">
-    <div class="services-header">
-      <h2>SERVICES</h2>
-      <hr>
-      <div class="services-list">
-        <a href="estate-planning.html">Estate Planning</a>
-        <a href="young-families.html">Estate Planning<br>for Young Families</a>
-        <a href="probate-services.html">Executor and<br>Probate Services</a>
-        <a href="legal-transition.html">Group Estate Planning Workshops</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-section">
-    <h3>Ready to Get Started?</h3>
-    <p>Let's discuss your family's unique needs and create a plan that gives you confidence in your decisions.</p>
-
-    <form name="contact" method="POST" netlify action="/success.html" class="contact-form">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name *" required>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email *" required>
-      </div>
-      <div class="form-group">
-        <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
-      </div>
-      <div class="form-group">
-        <textarea name="message" rows="5" placeholder="How can we help you? *" required></textarea>
-      </div>
-      <button type="submit" class="cta-submit">Send Message</button>
-      <p class="form-note">We'll get back to you within 24 hours</p>
-    </form>
-
-    <div class="cta-divider">
-      <span>Or contact us directly:</span>
-    </div>
-
-    <div class="cta-buttons">
-      <a href="tel:9024030008" class="cta-primary">Call (902) 403-0008</a>
-      <a href="mailto:megan@rossestatelaw.ca" class="cta-secondary">Schedule Free Consultation</a>
-    </div>
-    <p class="cta-note">Free initial consultation • Flat fee services • No hidden costs</p>
-  </div>
-
-  <div class="contact-banner">
-    <div class="contact-content">
-      <div class="contact-info">
-        <h2>Ross Estate Law</h2>
-        <div class="contact-details">
-          <div class="contact-item">
-            <span class="phone">(902) 403-0008</span>
-          </div>
-          <div class="contact-item">
-            <span class="email">megan@rossestatelaw.ca</span>
-          </div>
-          <div class="contact-item">
-            <span class="address">99 Wyse Road, Suite 1100<br>Dartmouth, Nova Scotia<br>B3A 4S5</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="footer">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="estate-planning.html">Services</a></li>
-      <li><a href="contact-us.html">Contact</a></li>
-      <li><a href="legal.html">Privacy & Legal</a></li>
-    </ul>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const stepItems = document.querySelectorAll(".step-item");
-
-      function checkVisibility() {
-        stepItems.forEach(item => {
-          const rect = item.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          
-          // Check if element is in viewport
-          if (rect.top <= windowHeight * 0.8 && rect.bottom >= 0) {
-            item.classList.add("visible");
-          }
-        });
-      }
-
-      // Check on scroll
-      window.addEventListener('scroll', checkVisibility);
-      
-      // Check on load
-      checkVisibility();
-      
-      // Also check after a delay (for artifact preview)
-      setTimeout(checkVisibility, 100);
-    });
-  </script>
-  <script src="js/load-navigation.js"></script>
-  <script src="js/mobile-nav.js"></script>
-<script src="js/cookie-consent.js"></script>
 </body>
 </html>
