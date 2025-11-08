@@ -82,7 +82,7 @@ img {
 }
 #navigation div ul li.current a.about,
 #navigation div ul li.current a.about:hover {
-	background-position: right 55px center;
+	background-position: right 10px center;
 }
 #navigation div ul li a:hover {
 	background: none;
