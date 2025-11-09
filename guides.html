@@ -38,9 +38,8 @@
 	</div>
 	<div id="nav-placeholder"></div>
 	<div id="body">
-		<div id="background">
-			<div>
-				<div class="guides-container">
+		<div id="background" class="guides-page-bg">
+			<div class="guides-container">
 					<!-- Documents Section -->
 					<div class="section">
 						<h2 class="section-title">Documents</h2>
@@ -110,20 +109,27 @@
 			min-height: 400px;
 		}
 
-		/* Override default width restrictions */
-		#body div#background div {
+		/* Guides page specific - full width layout */
+		.guides-page-bg {
+			max-width: 100% !important;
 			width: 100% !important;
-			max-width: none !important;
+			margin: 0 auto !important;
+			padding: 60px 20px !important;
+			float: none !important;
+			position: relative !important;
+			left: auto !important;
+			right: auto !important;
+			transform: none !important;
+			background: #ffffff !important;
 		}
 
-		#body div#background div div {
+		/* Override default background div widths */
+		#body div#background.guides-page-bg div,
+		#body div#background.guides-page-bg div div,
+		#body div#background.guides-page-bg div div div {
 			width: 100% !important;
-			max-width: none !important;
-		}
-
-		#body div#background div div div {
-			width: 100% !important;
-			max-width: none !important;
+			max-width: 1600px !important;
+			margin: 0 auto !important;
 			padding: 0 !important;
 		}
 
