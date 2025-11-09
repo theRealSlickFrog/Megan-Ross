@@ -741,11 +741,17 @@
 					}
 				}
 
+				// Filter for blog posts only (category is "blog" or "both" or not set)
+				const blogPosts = posts.filter(post => {
+					const category = post.category || 'blog'; // default to 'blog' if not set
+					return category === 'blog' || category === 'both';
+				});
+
 				// Sort by date (newest first)
-				posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+				blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 				// Display posts as previews
-				blogContainer.innerHTML = posts.map(post => {
+				blogContainer.innerHTML = blogPosts.map(post => {
 					const firstSentence = getFirstSentence(post.body);
 					const slug = post.slug || createSlug(post.title);
 
