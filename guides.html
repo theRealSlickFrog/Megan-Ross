@@ -126,9 +126,9 @@
 		}
 
 		/* Override default background div widths */
-		#body div#background.guides-page-bg div,
-		#body div#background.guides-page-bg div div,
-		#body div#background.guides-page-bg div div div {
+		#body div#background.guides-page-bg div:not(.events-content):not(.blog-post-box):not(.blog-post-content),
+		#body div#background.guides-page-bg div div:not(.events-content):not(.blog-post-box):not(.blog-post-content),
+		#body div#background.guides-page-bg div div div:not(.events-content):not(.blog-post-box):not(.blog-post-content) {
 			width: 100% !important;
 			max-width: 1600px !important;
 			margin: 0 auto !important;
