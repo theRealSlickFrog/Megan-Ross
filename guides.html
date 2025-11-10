@@ -478,6 +478,7 @@
 				// Filter for guides or both
 				const guidePosts = posts.filter(post => {
 					const category = (post.category || 'blog').trim().toLowerCase();
+					console.log('Post:', post.title, 'Category:', category);
 					return category === 'guides' || category === 'both';
 				});
 
