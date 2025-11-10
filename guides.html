@@ -307,6 +307,25 @@
 			overflow: hidden !important;
 		}
 
+		/* Scrollable body content within each blog post */
+		.blog-post-body-scroll::-webkit-scrollbar {
+			width: 8px !important;
+		}
+
+		.blog-post-body-scroll::-webkit-scrollbar-track {
+			background: #f1f1f1 !important;
+			border-radius: 4px !important;
+		}
+
+		.blog-post-body-scroll::-webkit-scrollbar-thumb {
+			background: #8B7355 !important;
+			border-radius: 4px !important;
+		}
+
+		.blog-post-body-scroll::-webkit-scrollbar-thumb:hover {
+			background: #6d5a42 !important;
+		}
+
 		/* Mobile Responsive */
 		@media (max-width: 768px) {
 			.blog-post-box {
@@ -471,19 +490,30 @@
 
 				// Display posts
 				container.innerHTML = guidePosts.map(post => {
-					const excerpt = getExcerpt(post.body);
 					const dateStr = formatDate(post.date);
 					const fallbackImg = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250"%3E%3Crect fill="%23ddd" width="400" height="250"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="18" fill="%23999"%3ENo Image%3C/text%3E%3C/svg%3E';
+					// Convert markdown to HTML (basic conversion)
+					const bodyHtml = post.body
+						.replace(/### (.*)/g, '<h3>$1</h3>')
+						.replace(/## (.*)/g, '<h2>$1</h2>')
+						.replace(/# (.*)/g, '<h1>$1</h1>')
+						.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+						.replace(/\*(.*?)\*/g, '<em>$1</em>')
+						.replace(/\n\n/g, '</p><p>')
+						.replace(/^\* (.*)/gm, '<li>$1</li>')
+						.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
 
 					return `
-						<div class="blog-post-box" style="display: flex !important; gap: 20px !important;">
+						<div class="blog-post-box" style="display: flex !important; gap: 20px !important; align-items: stretch !important;">
 							<div class="blog-post-image" style="width: 40% !important; flex-shrink: 0 !important;">
 								<img src="${post.thumbnail || fallbackImg}" alt="${escapeHtml(post.title)}" onerror="this.src='${fallbackImg}'" style="width: 100% !important; height: 250px !important; object-fit: cover !important; display: block !important;">
 							</div>
-							<div class="blog-post-content" style="width: 60% !important; display: block !important;">
-								<h3 class="blog-post-title" style="display: block !important; font-size: 24px !important; font-weight: bold !important; color: #333 !important; margin: 0 0 10px 0 !important; text-align: left !important;">${escapeHtml(post.title)}</h3>
-								<p class="blog-post-meta" style="display: block !important; font-size: 14px !important; color: #666 !important; margin: 0 0 15px 0 !important; text-align: left !important;">${dateStr}</p>
-								<p class="blog-post-excerpt" style="display: block !important; font-size: 16px !important; color: #333 !important; line-height: 1.6 !important; margin: 0 !important; text-align: left !important;">${escapeHtml(excerpt)}</p>
+							<div class="blog-post-content" style="width: 60% !important; display: flex !important; flex-direction: column !important;">
+								<h3 class="blog-post-title" style="display: block !important; font-size: 24px !important; font-weight: bold !important; color: #333 !important; margin: 0 0 10px 0 !important; text-align: left !important; flex-shrink: 0 !important;">${escapeHtml(post.title)}</h3>
+								<p class="blog-post-meta" style="display: block !important; font-size: 14px !important; color: #666 !important; margin: 0 0 15px 0 !important; text-align: left !important; flex-shrink: 0 !important;">${dateStr}</p>
+								<div class="blog-post-body-scroll" style="display: block !important; overflow-y: auto !important; max-height: 200px !important; padding-right: 10px !important; font-size: 16px !important; color: #333 !important; line-height: 1.6 !important; text-align: left !important;">
+									<p>${bodyHtml}</p>
+								</div>
 							</div>
 						</div>
 					`;
