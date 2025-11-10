@@ -226,6 +226,102 @@
 		.events-content {
 			margin-top: 30px;
 			text-align: left;
+			max-height: 600px;
+			overflow-y: auto;
+			padding-right: 10px;
+		}
+
+		/* Blog Post Box */
+		.blog-post-box {
+			background: #8B7355;
+			border-radius: 10px;
+			padding: 20px;
+			margin-bottom: 25px;
+			display: flex;
+			gap: 20px;
+			align-items: flex-start;
+		}
+
+		.blog-post-image {
+			width: 40%;
+			flex-shrink: 0;
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		.blog-post-image img {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+			display: block;
+		}
+
+		.blog-post-content {
+			width: 60%;
+			text-align: left;
+			color: #fff;
+		}
+
+		.blog-post-title {
+			font-size: 24px;
+			font-weight: bold;
+			color: #fff;
+			margin: 0 0 10px 0;
+			text-align: left;
+		}
+
+		.blog-post-meta {
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.8);
+			margin: 0 0 15px 0;
+			text-align: left;
+		}
+
+		.blog-post-excerpt {
+			font-size: 16px;
+			color: #fff;
+			line-height: 1.6;
+			margin: 0;
+			text-align: left;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		/* Scrollbar styling */
+		.events-content::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		.events-content::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			border-radius: 5px;
+		}
+
+		.events-content::-webkit-scrollbar-thumb {
+			background: #8B7355;
+			border-radius: 5px;
+		}
+
+		.events-content::-webkit-scrollbar-thumb:hover {
+			background: #6d5a42;
+		}
+
+		/* Mobile Responsive */
+		@media (max-width: 768px) {
+			.blog-post-box {
+				flex-direction: column;
+			}
+
+			.blog-post-image,
+			.blog-post-content {
+				width: 100%;
+			}
+
+			.blog-post-image img {
+				height: 200px;
+			}
 		}
 
 		/* Tablet Responsive */
@@ -331,6 +427,119 @@
 	<script src="js/mobile-nav.js"></script>
 	<script src="js/load-navigation.js"></script>
 	<script src="js/cookie-consent.js"></script>
+
+	<script>
+		// Load blog posts for guides page
+		async function loadGuidePosts() {
+			try {
+				const response = await fetch('https://api.github.com/repos/theRealSlickFrog/Megan-Ross/contents/_posts');
+				const files = await response.json();
+
+				const container = document.querySelector('.events-content');
+
+				if (!files || files.length === 0) {
+					container.innerHTML = '<p style="color: #666;">No events yet.</p>';
+					return;
+				}
+
+				// Fetch and parse all posts
+				const posts = [];
+				for (const file of files) {
+					if (file.name.endsWith('.md')) {
+						const contentResponse = await fetch(file.download_url);
+						const content = await contentResponse.text();
+						const post = parsePost(content);
+						if (post) posts.push(post);
+					}
+				}
+
+				// Filter for guides or both
+				const guidePosts = posts.filter(post => {
+					const category = (post.category || 'blog').trim().toLowerCase();
+					return category === 'guides' || category === 'both';
+				});
+
+				// Sort by date (newest first)
+				guidePosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+				if (guidePosts.length === 0) {
+					container.innerHTML = '<p style="color: #666;">No events yet.</p>';
+					return;
+				}
+
+				// Display posts
+				container.innerHTML = guidePosts.map(post => {
+					const excerpt = getExcerpt(post.body);
+					const dateStr = formatDate(post.date);
+					const fallbackImg = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250"%3E%3Crect fill="%23ddd" width="400" height="250"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="18" fill="%23999"%3ENo Image%3C/text%3E%3C/svg%3E';
+
+					return `
+						<div class="blog-post-box">
+							<div class="blog-post-image">
+								<img src="${post.thumbnail || fallbackImg}" alt="${escapeHtml(post.title)}" onerror="this.src='${fallbackImg}'">
+							</div>
+							<div class="blog-post-content">
+								<h3 class="blog-post-title">${escapeHtml(post.title)}</h3>
+								<p class="blog-post-meta">${dateStr}</p>
+								<p class="blog-post-excerpt">${escapeHtml(excerpt)}</p>
+							</div>
+						</div>
+					`;
+				}).join('');
+
+			} catch (error) {
+				console.error('Error loading guide posts:', error);
+				document.querySelector('.events-content').innerHTML = '<p style="color: #666;">Error loading events.</p>';
+			}
+		}
+
+		// Parse markdown post
+		function parsePost(content) {
+			const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+			const match = content.match(frontMatterRegex);
+			if (!match) return null;
+
+			const post = { body: match[2] };
+
+			// Parse front matter
+			match[1].split('\n').forEach(line => {
+				const colonIndex = line.indexOf(':');
+				if (colonIndex > 0) {
+					const key = line.substring(0, colonIndex).trim();
+					const value = line.substring(colonIndex + 1).trim();
+					post[key] = value;
+				}
+			});
+
+			return post;
+		}
+
+		// Get excerpt (first 150 characters)
+		function getExcerpt(body) {
+			const text = body.replace(/[#*_`\[\]]/g, '').trim();
+			return text.length > 150 ? text.substring(0, 150) + '...' : text;
+		}
+
+		// Format date
+		function formatDate(dateStr) {
+			try {
+				const date = new Date(dateStr);
+				return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+			} catch {
+				return dateStr;
+			}
+		}
+
+		// Escape HTML
+		function escapeHtml(text) {
+			const div = document.createElement('div');
+			div.textContent = text;
+			return div.innerHTML;
+		}
+
+		// Load on page load
+		loadGuidePosts();
+	</script>
 
 </body>
 </html>
