@@ -468,7 +468,9 @@
 				const posts = [];
 				for (const file of files) {
 					if (file.name.endsWith('.md')) {
-						const contentResponse = await fetch(file.download_url);
+						// Add cache-busting parameter to force fresh fetch from GitHub
+						const cacheBuster = `?t=${Date.now()}`;
+						const contentResponse = await fetch(file.download_url + cacheBuster);
 						const content = await contentResponse.text();
 						const post = parsePost(content);
 						if (post) posts.push(post);
