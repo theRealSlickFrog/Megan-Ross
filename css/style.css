@@ -439,8 +439,10 @@ p a:hover {
 
 .education-section {
 	margin: 0 auto;
-	padding: 60px 0;
-	width: 940px;
+	padding: 60px 20px;
+	width: 100%;
+	max-width: 940px;
+	box-sizing: border-box;
 }
 
 .education-item {
