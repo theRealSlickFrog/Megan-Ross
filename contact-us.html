@@ -82,6 +82,17 @@
 		<div id="image-section">
 		</div>
 	</div>
+
+	<!-- Calendly Section -->
+	<div id="calendly" class="calendly-section">
+		<div class="calendly-container">
+			<!-- Calendly inline widget begin -->
+			<div class="calendly-inline-widget" data-url="https://calendly.com/megan-rossestatelaw/estate-planning-intake" style="min-width:320px;height:900px;"></div>
+			<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+			<!-- Calendly inline widget end -->
+		</div>
+	</div>
+
 	<div class="map-section">
 		<iframe
 			src="https://www.google.com/maps?q=99+Wyse+Road+Suite+1100+Dartmouth+Nova+Scotia+B3A+4S5&output=embed"
@@ -487,6 +498,23 @@
 			background: #555;
 		}
 
+		/* Calendly Section */
+		.calendly-section {
+			background: #f5f5f5;
+			padding: 60px 20px;
+			width: 100%;
+		}
+
+		.calendly-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			background: #ffffff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			box-sizing: border-box;
+		}
+
 		/* Google Map Section */
 		.map-section {
 			width: 100%;
@@ -553,6 +581,15 @@
 			/* Contact form */
 			.contact-form {
 				padding: 0;
+			}
+
+			/* Calendly section */
+			.calendly-section {
+				padding: 40px 15px;
+			}
+
+			.calendly-container {
+				padding: 15px 10px;
 			}
 
 			/* Map section */
