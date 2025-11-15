@@ -29,7 +29,7 @@ img {
 	border: 0;
 }
 #header {
-	background: #ffffff;
+	background: url(../images/bg-gray.png) repeat-x left top;
 	height: 306px;
 	position: relative;
 	width: 100%;
@@ -40,7 +40,7 @@ img {
 	width: 940px;
 }
 #header div a.logo {
-	background: url(../images/dogs.jpg) no-repeat center center;
+	background: url(../images/dogs.jpg) no-repeat center top;
 	background-size: contain;
 	display: block;
 	height: 306px;
