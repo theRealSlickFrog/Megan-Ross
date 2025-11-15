@@ -625,6 +625,63 @@
 		.about h3 {
 			font-size: 48px !important;
 		}
+
+		/* Mobile responsive adjustments */
+		@media (max-width: 768px) {
+			/* Adjust process steps starting position on mobile */
+			.process-steps {
+				margin-top: 40px !important;
+			}
+
+			/* Make boxes stack vertically and full width on mobile */
+			.step-item:nth-child(odd),
+			.step-item:nth-child(even) {
+				width: 100%;
+				margin-left: 0;
+				justify-content: center;
+			}
+
+			.step-number {
+				width: 90%;
+				max-width: 500px;
+			}
+
+			.step-number h4 {
+				font-size: 22px;
+			}
+
+			.step-number p {
+				font-size: 18px;
+			}
+
+			.step-icon {
+				font-size: 64px;
+				right: 15px;
+				top: 15px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.step-number {
+				padding: 25px 20px;
+			}
+
+			.step-number span.step-digit {
+				font-size: 24px;
+			}
+
+			.step-number h4 {
+				font-size: 18px;
+			}
+
+			.step-number p {
+				font-size: 16px;
+			}
+
+			.step-icon {
+				font-size: 48px;
+			}
+		}
 	</style>
 
 	<script src="js/load-navigation.js"></script>
