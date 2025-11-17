@@ -36,14 +36,27 @@
 					<div class="section">
 						<h2 class="section-title">Documents</h2>
 						<div class="documents-grid">
-							<div class="document-item">
-								<img src="pdf.jpg" alt="PDF Icon" class="pdf-icon">
-								<h3>Will Checklist</h3>
-							</div>
-							<div class="document-item">
-								<img src="pdf.jpg" alt="PDF Icon" class="pdf-icon">
-								<h3>Probate Checklist</h3>
-							</div>
+							<a href="https://drive.google.com/open?id=1S5KoOGl4rfRYPBxJerCtD_x8SfVe9o4G" target="_blank" class="document-item">
+								<img src="images/Estate Executor WorkBook.jpg" alt="Estate Executor WorkBook" class="document-image">
+								<div class="document-overlay">Estate Executor WorkBook</div>
+							</a>
+							<a href="https://drive.google.com/open?id=1JjDxSxKFY_z5z_tv_3yc-pfsEvrAeNHn" target="_blank" class="document-item">
+								<img src="images/Estate Planning Guide.jpg" alt="Estate Planning Guide" class="document-image">
+								<div class="document-overlay">Estate Planning Guide</div>
+							</a>
+							<a href="https://drive.google.com/open?id=1bfHsWcF4mMKMMqY92MT5TJCiclm1zjbc" target="_blank" class="document-item">
+								<img src="images/Guardianship Planning Workbook.jpg" alt="Guardianship Planning Workbook" class="document-image">
+								<div class="document-overlay">Guardianship Planning Workbook</div>
+							</a>
+							<a href="https://drive.google.com/open?id=1Fr66XzLUaWmrcYgABjyAVPSFRRVHdkOJ" target="_blank" class="document-item">
+								<img src="images/Personal Directive Planning.jpg" alt="Personal Directive Planning" class="document-image">
+								<div class="document-overlay">Personal Directive Planning</div>
+							</a>
+							<!-- Empty spacers to create additional row space -->
+							<div class="document-spacer"></div>
+							<div class="document-spacer"></div>
+							<div class="document-spacer"></div>
+							<div class="document-spacer"></div>
 						</div>
 					</div>
 
@@ -139,7 +152,7 @@
 		}
 
 		.section-title {
-			font-size: 24px;
+			font-size: 29px;
 			font-weight: bold;
 			color: #000;
 			margin: 0 0 20px 0;
@@ -149,9 +162,12 @@
 
 		/* Documents Grid */
 		.documents-grid {
-			display: flex;
-			gap: 40px;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+			gap: 80px 60px;
 			margin-top: 30px;
+			margin-bottom: 150px;
+			justify-content: center;
 		}
 
 		.document-item {
@@ -160,6 +176,41 @@
 			align-items: center;
 			text-align: center;
 			cursor: pointer;
+			text-decoration: none;
+			color: inherit;
+			transition: transform 0.2s ease;
+			max-width: 200px;
+			position: relative;
+		}
+
+		.document-item:hover {
+			transform: translateY(-5px);
+		}
+
+		.document-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 260px;
+			background: #ffffff;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			box-sizing: border-box;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			font-size: 22px;
+			font-weight: bold;
+			color: #333;
+			text-align: center;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+
+		.document-item:hover .document-overlay {
+			opacity: 1;
 		}
 
 		.pdf-icon {
@@ -167,6 +218,21 @@
 			height: 80px;
 			object-fit: contain;
 			margin-bottom: 15px;
+			flex-shrink: 0;
+		}
+
+		.document-image {
+			width: 200px;
+			height: 260px;
+			object-fit: contain;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+			transition: box-shadow 0.3s ease, transform 0.3s ease;
+		}
+
+		.document-item:hover .document-image {
+			box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+			transform: translateY(-5px);
 		}
 
 		.document-item h3 {
@@ -174,6 +240,10 @@
 			font-weight: bold;
 			color: #000;
 			margin: 0;
+		}
+
+		.document-spacer {
+			height: 40px;
 		}
 
 		/* Event Item */
@@ -213,6 +283,7 @@
 		/* Events Section Styling - Force override global CSS */
 		.events-section {
 			text-align: left !important;
+			padding-top: 150px !important;
 		}
 
 		.events-content {
@@ -373,9 +444,9 @@
 			}
 
 			.documents-grid {
-				flex-direction: column;
+				grid-template-columns: repeat(2, 1fr);
 				gap: 30px;
-				align-items: center;
+				margin-bottom: 60px;
 			}
 
 			.document-item {
@@ -423,6 +494,10 @@
 
 			.section-title {
 				font-size: 18px;
+			}
+
+			.documents-grid {
+				grid-template-columns: 1fr;
 			}
 
 			.document-item h3 {
