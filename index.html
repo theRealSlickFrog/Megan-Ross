@@ -337,9 +337,15 @@
 					}
 				}
 
+				// Filter for blog posts only (not guides-only posts)
+				const blogPosts = posts.filter(post => {
+					const category = (post.category || 'blog').trim().toLowerCase();
+					return category === 'blog' || category === 'both';
+				});
+
 				// Sort by date (newest first) and take top 3
-				posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-				const recentPosts = posts.slice(0, 3);
+				blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+				const recentPosts = blogPosts.slice(0, 3);
 
 				// Display posts as article cards
 				blogContainer.innerHTML = recentPosts.map(post => {
