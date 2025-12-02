@@ -3,6 +3,7 @@ layout: blog
 title: Eligibility and Restrictions for Acting as a Power of Attorney
 date: 2025-10-06T14:10:00.000-03:00
 thumbnail: /images/blog/eligibility-.avif
+category: blog
 ---
 Note: this article provides legal information, not legal advice. Reading this article should not be construed as obtaining legal advice from Ross Estate Law.
 
