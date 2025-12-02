@@ -3,7 +3,7 @@ layout: blog
 title: Attorney Resignation Process in Nova Scotia for Powers of Attorney
 date: 2025-10-07T14:23:00.000-03:00
 thumbnail: /images/blog/resignation.avif
-category: both
+category: blog
 ---
 Note: this article provides legal information, not legal advice. Reading this article should not be construed as obtaining legal advice from Ross Estate Law.
 
